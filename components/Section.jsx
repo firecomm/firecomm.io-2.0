@@ -12,7 +12,7 @@ const Section = ({
       <div>
         <h1 onClick={() => toggle(title)}>{title}</h1>
         {subsections.map(subtitle => (
-          <h1 onClick={() => changeActiveSection(title)}>{subtitle}</h1>
+          <h1 onClick={() => changeActiveSection(subtitle)}>{subtitle}</h1>
         ))}
       </div>
     );

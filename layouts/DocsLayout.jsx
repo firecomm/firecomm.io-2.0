@@ -165,7 +165,7 @@ class DocsLayout extends React.Component {
         <Head />
         <Nav />
         <HamburgerBar
-          activeSection={this.activeSection}
+          activeSection={this.state.activeSection}
           toggleSidebar={() => this.toggleSidebar()}
         />
         <Sidebar
