@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
 
-class HomeLayout extends React.Component {
+class DocsLayout extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -41,10 +41,15 @@ class HomeLayout extends React.Component {
       <>
         <Head />
         <Nav />
+        <HamburgerBar toggleSidebar={() => this.toggleSidebar()} />
+        <Sidebar
+          windowWidth={this.state.windowWidth}
+          sidebarActive={this.state.sidebarActive}
+        />
         <div class="page-body">{this.props.children}</div>
       </>
     );
   }
 }
 
-export default HomeLayout;
+export default DocsLayout;

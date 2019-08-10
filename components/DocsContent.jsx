@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import HomeLayout from "../layouts/HomeLayout";
+import DocsLayout from "../layouts/DocsLayout";
 
 const Markdown = styled.div`
   /*!
@@ -119,14 +119,14 @@ const wrapMarkup = html => ({
 
 const DocsContent = ({ content }) => {
   return (
-    <HomeLayout>
+    <DocsLayout>
       <Markdown>
         <div
           className="markdown"
           dangerouslySetInnerHTML={wrapMarkup(content)}
         />
       </Markdown>
-    </HomeLayout>
+    </DocsLayout>
   );
 };
 
