@@ -44,7 +44,7 @@ const Hamburger = styled.div`
     height: 4px;
     width: 100%;
     background: ${props => props.theme.black};
-    border-radius: 7px;
+    /* border-radius: 7px; */
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
