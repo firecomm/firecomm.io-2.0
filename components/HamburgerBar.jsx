@@ -16,6 +16,7 @@ const HamburgerBar = props => {
   return (
     <HamburgerBarStyle>
       <button onClick={props.toggleSidebar}>Toggle me</button>
+      <h1>{props.activeSection}</h1>
     </HamburgerBarStyle>
   );
 };

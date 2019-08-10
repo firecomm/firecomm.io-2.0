@@ -122,7 +122,8 @@ class DocsLayout extends React.Component {
     super();
     this.state = {
       sidebarActive: true,
-      windowWidth: 480
+      windowWidth: 480,
+      activeSection: "Getting Started"
     };
   }
 
@@ -130,6 +131,13 @@ class DocsLayout extends React.Component {
     this.setState(state => {
       console.log("resize");
       return { windowWidth: window.innerWidth };
+    });
+  }
+
+  changeActiveSection(section) {
+    console.log(section);
+    this.setState(state => {
+      return { activeSection: section };
     });
   }
 
@@ -156,14 +164,20 @@ class DocsLayout extends React.Component {
       <>
         <Head />
         <Nav />
-        <HamburgerBar toggleSidebar={() => this.toggleSidebar()} />
+        <HamburgerBar
+          activeSection={this.activeSection}
+          toggleSidebar={() => this.toggleSidebar()}
+        />
         <Sidebar
           windowWidth={this.state.windowWidth}
           sidebarActive={this.state.sidebarActive}
+          changeActiveSection={section => this.changeActiveSection(section)}
         />
-        <MarkdownStyles>
-          <div class="page-body">{this.props.children}</div>
-        </MarkdownStyles>
+        {this.state.sidebarActive && this.state.windowWidth <= 480 ? null : (
+          <MarkdownStyles>
+            <div class="page-body">{this.props.children}</div>
+          </MarkdownStyles>
+        )}
       </>
     );
   }

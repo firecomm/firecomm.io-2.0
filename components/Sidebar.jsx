@@ -55,6 +55,7 @@ class Sidebar extends React.Component {
                 toggle={section => this.toggleSection(section)}
                 key={`section-${index}`}
                 {...el}
+                changeActiveSection={sections => this.props.changeActiveSection}
               />
             );
           })}
