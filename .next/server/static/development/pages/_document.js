@@ -1163,7 +1163,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_3___default.a {
         lineNumber: 26
       },
       __self: this
-    }, "My page"), this.props.styleTags), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("body", {
+    }, "Firecomm"), this.props.styleTags), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("body", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30
