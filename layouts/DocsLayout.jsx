@@ -6,6 +6,12 @@ import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
 
+const PageContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  width: ${props => (props.big ? "100%" : "75%")};
+`;
+
 const MarkdownStyles = styled.div`
   /*!
 * Agate by Taufik Nurrohman <https://github.com/tovic>

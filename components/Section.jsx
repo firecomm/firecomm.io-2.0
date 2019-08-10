@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const SubsectionStyled = styled.h1`
   font-weight: 100;
+  margin-left: 20px;
   color: ${props => props.theme.black};
 `;
 
