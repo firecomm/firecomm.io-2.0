@@ -4,7 +4,9 @@ const Nav = () => {
   return (
     <div id="navigation-bar">
       <Link href="/">Home</Link>
-      <Link href="/docs">Docs</Link>
+      <Link>
+        <a href="/docs/intro/gettingStarted">Docs</a>
+      </Link>
       <Link href="/guides">Guides</Link>
       <Link href="/team">Team</Link>
     </div>
