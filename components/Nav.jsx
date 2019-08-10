@@ -5,13 +5,14 @@ const NavStyle = styled.section`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background-color: ${props => props.theme.mainColor};
+  background-color: ${props =>
+    props.main ? props.theme.mainColor : props.theme.offColor};
 `;
 
 const Nav = props => {
   if (props.windowWidth >= 480) {
     return (
-      <NavStyle color={"main"}>
+      <NavStyle main>
         <h1>Logo</h1>
         <Link href="/">Home</Link>
         <Link>
@@ -24,10 +25,10 @@ const Nav = props => {
   } else {
     return (
       <>
-        <NavStyle color={"main"}>
+        <NavStyle main>
           <h1>Logo</h1>
         </NavStyle>
-        <NavStyle color="off">
+        <NavStyle>
           <Link href="/">Home</Link>
           <Link>
             <a href="/docs/intro/gettingStarted">Docs</a>
