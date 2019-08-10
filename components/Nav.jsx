@@ -30,6 +30,8 @@ const NavStyle = styled.section`
   }
   a:hover {
     cursor: pointer;
+    text-decoration: underline;
+    /* background-color: ${props => props.theme.darkMainColor}; */
   }
   i {
     color: ${props => props.theme.white};
@@ -72,7 +74,7 @@ const Nav = props => {
             </a>
           </div>{" "}
         </NavStyle>
-        <NavStyle>
+        <NavStyle main>
           <Link href="/">
             <a href="/">Home</a>
           </Link>

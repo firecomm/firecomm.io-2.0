@@ -8,7 +8,14 @@ const SidebarStyled = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: brown;
+  font-size: 7.5px;
+  font-weight: 400;
+  color: ${props => props.theme.black};
+  background-color: ${props => props.theme.white};
+
+  :hover {
+    cursor: pointer;
+  }
 
   @media only screen and (min-width: 480px) {
     width: 25%;
