@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript } from "next/document";
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from "styled-components";
-
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     // Step 1: Create an instance of ServerStyleSheet
@@ -24,6 +23,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {/* Step 5: Output the styles in the head  */}
+          <script src="https://use.fontawesome.com/582265226c.js" />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap"
             rel="stylesheet"
