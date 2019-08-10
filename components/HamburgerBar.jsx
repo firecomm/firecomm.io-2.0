@@ -1,12 +1,30 @@
 import styled from "styled-components";
 import { loadGetInitialProps } from "next-server/dist/lib/utils";
 
+import { VerticalCenter } from "../styles/styles";
+
+const SectionTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: 400;
+`;
+
 const Hamburger = styled.div`
   /* Icon 3 */
+  display: flex;
+  margin-left: 10px;
+  height: 100%;
+  /* border: 0.2px ${props => props.theme.black} solid;
+  border-radius: 5px; */
+  flex-direction: column;
+  justify-content: center;
 
   #nav-icon3 {
     width: 30px;
-    height: 45px;
+    height: 30px;
     position: relative;
     /* margin: 50px auto; */
     -webkit-transform: rotate(0deg);
@@ -23,7 +41,7 @@ const Hamburger = styled.div`
   span {
     display: block;
     position: absolute;
-    height: 5px;
+    height: 4px;
     width: 100%;
     background: ${props => props.theme.black};
     border-radius: 7px;
@@ -84,6 +102,7 @@ const HamburgerBarStyle = styled.div`
   height: 50px;
   background-color: ${props => props.theme.grey};
   display: flex;
+  flex-direction: row;
 
   @media only screen and (min-width: 480px) {
     display: none;
@@ -93,23 +112,32 @@ const HamburgerBarStyle = styled.div`
 const HamburgerBar = props => {
   return (
     <HamburgerBarStyle>
-      <button
-        onClick={() => {
-          document.querySelector("#nav-icon3").classList.add("open");
-          props.toggleSidebar();
-        }}
-      >
-        Toggle me
-      </button>
       <Hamburger>
-        <div id="nav-icon3">
+        <div
+          id="nav-icon3"
+          onClick={() => {
+            const hamburger = document.querySelector("#nav-icon3");
+            let open = false;
+            for (let i = 0; i < hamburger.classList.length; i++) {
+              if (hamburger.classList[i] === "open") {
+                open = true;
+              }
+            }
+            if (open) {
+              document.querySelector("#nav-icon3").classList.remove("open");
+            } else {
+              document.querySelector("#nav-icon3").classList.add("open");
+            }
+            props.toggleSidebar();
+          }}
+        >
           <span />
           <span />
           <span />
           <span />
         </div>
       </Hamburger>
-      <h1>{props.activeSection}</h1>
+      <SectionTitle>{props.activeSection}</SectionTitle>
     </HamburgerBarStyle>
   );
 };

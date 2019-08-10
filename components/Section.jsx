@@ -6,6 +6,8 @@ const SubsectionStyled = styled.h1`
   color: ${props => props.theme.black};
 `;
 
+import { VerticalCenter } from "../styles/styles";
+
 const SectionStyled = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,12 +27,6 @@ const SectionStyled = styled.div`
   .rotate90 {
     transform: rotate(90deg);
   }
-`;
-
-const VerticalCenter = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 const Section = ({
