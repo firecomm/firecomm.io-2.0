@@ -4,7 +4,7 @@ import { loadGetInitialProps } from "next-server/dist/lib/utils";
 const HamburgerBarStyle = styled.div`
   width: 100%;
   height: 50px;
-  background-color: blue;
+  background-color: ${props => props.theme.darkMainColor};
   display: flex;
 
   @media only screen and (min-width: 480px) {

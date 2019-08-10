@@ -1,11 +1,29 @@
 import React from "react";
 import App, { Container, Head } from "next/app";
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+
+const theme = {
+  mainColor: "#e01634",
+  darkMainColor: "#8E0E34",
+  offColor: "#60BBE5",
+  grey: "#edf0f2",
+  white: "#fcfdff",
+  black: "#2b282b"
+};
 
 const GlobalStyle = createGlobalStyle`
   body {
+    width:100%;
+    margin:0;
+    height:100%;
     font-family: 'Roboto', sans-serif;
+    background-color:${theme.white};
+    
+  }
+  a{
+    color: ${theme.white};
+    text-decoration: none;
   }
 `;
 
@@ -31,7 +49,9 @@ class MyApp extends App {
     return (
       <Container>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Container>
     );
   }

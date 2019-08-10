@@ -40,7 +40,7 @@ class HomeLayout extends React.Component {
     return (
       <>
         <Head />
-        <Nav />
+        <Nav windowWidth={this.state.windowWidth} />
         <div class="page-body">{this.props.children}</div>
       </>
     );
