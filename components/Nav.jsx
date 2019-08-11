@@ -1,14 +1,95 @@
 import Link from "next/link";
+import styled from "styled-components";
 
-const Nav = () => {
-  return (
-    <div id="navigation-bar">
-      <Link href="/">Home</Link>
-      <Link href="/docs">Docs</Link>
-      <Link href="/guides">Guides</Link>
-      <Link href="/team">Team</Link>
-    </div>
-  );
+import NavCore from "./NavCore";
+import { mobileBreakpoint } from "../constants";
+
+import { VerticalCenter, Flex } from "../styles/styles";
+
+const NavStyle = styled.section`
+  height:50px;
+  display: flex;
+  width: 100%;
+  font-size: 17.5px;
+  justify-content: ${props => (props.left ? "left" : "space-around")};
+  background-color: ${props =>
+    props.main ? props.theme.mainColor : props.theme.offColor};
+
+  .logo {
+    margin-top:2px;
+    font-size: 30px;
+    font-weight:700;
+    width:225px;
+    color: ${props => props.theme.white};
+  }
+
+  .logo a {
+    margin-left:20px;
+    font-size: 25px;
+  }
+
+  .justify-left {
+    justify-content: left !important;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    /* background-color: ${props => props.theme.darkMainColor}; */
+  }
+  i {
+    color: ${props => props.theme.white};
+    font-size: 40px;
+  }
+`;
+
+const Nav = props => {
+  if (props.windowWidth >= mobileBreakpoint) {
+    return (
+      <NavStyle main>
+        <div className="logo">
+          <Flex>
+            <VerticalCenter>
+              <a href="">
+                <i class="fa fa-fire" />
+              </a>
+            </VerticalCenter>
+            <VerticalCenter>
+              <a href="/">Firecomm</a>
+            </VerticalCenter>
+          </Flex>
+        </div>
+        <NavCore />
+      </NavStyle>
+    );
+  } else {
+    return (
+      <>
+        <NavStyle main left>
+          <div className="logo">
+            <Flex>
+              <VerticalCenter>
+                <a href="">
+                  <i class="fa fa-fire" />
+                </a>
+              </VerticalCenter>
+              <VerticalCenter>
+                <a href="/">Firecomm</a>
+              </VerticalCenter>
+            </Flex>
+          </div>
+        </NavStyle>
+        <NavStyle main>
+          <NavCore />
+        </NavStyle>
+      </>
+    );
+  }
 };
 
 export default Nav;
