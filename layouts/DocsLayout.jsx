@@ -6,6 +6,10 @@ import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
 
+import { FlexWrap } from "../styles/styles";
+
+import { mobileBreakpoint } from "../constants";
+
 const PageContainer = styled.section`
   display: flex;
   flex-direction: row;
@@ -13,6 +17,13 @@ const PageContainer = styled.section`
 `;
 
 const MarkdownStyles = styled.div`
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90%;
+
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
+    width: 60%;
+  }
   /*!
 * Agate by Taufik Nurrohman <https://github.com/tovic>
 * ----------------------------------------------------
@@ -128,7 +139,7 @@ class DocsLayout extends React.Component {
     super();
     this.state = {
       sidebarActive: true,
-      windowWidth: 480,
+      windowWidth: mobileBreakpoint,
       activeSection: "Getting Started"
     };
   }
@@ -174,16 +185,19 @@ class DocsLayout extends React.Component {
           activeSection={this.state.activeSection}
           toggleSidebar={() => this.toggleSidebar()}
         />
-        <Sidebar
-          windowWidth={this.state.windowWidth}
-          sidebarActive={this.state.sidebarActive}
-          changeActiveSection={section => this.changeActiveSection(section)}
-        />
-        {this.state.sidebarActive && this.state.windowWidth <= 480 ? null : (
-          <MarkdownStyles>
-            <div class="page-body">{this.props.children}</div>
-          </MarkdownStyles>
-        )}
+        <FlexWrap>
+          <Sidebar
+            windowWidth={this.state.windowWidth}
+            sidebarActive={this.state.sidebarActive}
+            changeActiveSection={section => this.changeActiveSection(section)}
+          />
+          {this.state.sidebarActive &&
+          this.state.windowWidth <= mobileBreakpoint ? null : (
+            <MarkdownStyles>
+              <div class="page-body">{this.props.children}</div>
+            </MarkdownStyles>
+          )}
+        </FlexWrap>
       </>
     );
   }

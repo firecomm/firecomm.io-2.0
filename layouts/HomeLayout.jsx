@@ -5,12 +5,14 @@ import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
 
+import { mobileBreakpoint } from "../constants";
+
 class HomeLayout extends React.Component {
   constructor() {
     super();
     this.state = {
       sidebarActive: true,
-      windowWidth: 480
+      windowWidth: mobileBreakpoint
     };
   }
 

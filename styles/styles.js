@@ -5,3 +5,9 @@ export const VerticalCenter = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const FlexWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;

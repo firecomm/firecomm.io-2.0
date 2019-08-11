@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { loadGetInitialProps } from "next-server/dist/lib/utils";
 
+import { mobileBreakpoint } from "../constants";
 import { VerticalCenter } from "../styles/styles";
 
 const SectionTitle = styled.div`
@@ -16,6 +17,7 @@ const Hamburger = styled.div`
   /* Icon 3 */
   display: flex;
   margin-left: 10px;
+  margin-top:5px;
   height: 100%;
   /* border: 0.2px ${props => props.theme.black} solid;
   border-radius: 5px; */
@@ -104,7 +106,7 @@ const HamburgerBarStyle = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
     display: none;
   }
 `;

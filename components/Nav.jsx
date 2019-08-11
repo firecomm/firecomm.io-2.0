@@ -1,6 +1,9 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+import NavCore from "./NavCore";
+import { mobileBreakpoint } from "../constants";
+
 const NavStyle = styled.section`
   display: flex;
   width: 100%;
@@ -40,7 +43,7 @@ const NavStyle = styled.section`
 `;
 
 const Nav = props => {
-  if (props.windowWidth >= 480) {
+  if (props.windowWidth >= mobileBreakpoint) {
     return (
       <NavStyle main>
         <div className="logo">
@@ -48,20 +51,7 @@ const Nav = props => {
             <i class="fa fa-fire" /> Firecomm
           </a>
         </div>
-        <Link href="/">
-          <a href="/">Home</a>
-        </Link>
-        <Link>
-          <a href="/docs/intro/gettingStarted">Docs</a>
-        </Link>
-        <Link href="/guides">
-          <a href="/guides">Guides</a>
-        </Link>
-        <Link>
-          <a href="https://github.com/oslabs-beta/firecomm">
-            <i class="fa fa-github" />
-          </a>
-        </Link>
+        <NavCore />
       </NavStyle>
     );
   } else {
@@ -75,20 +65,7 @@ const Nav = props => {
           </div>{" "}
         </NavStyle>
         <NavStyle main>
-          <Link href="/">
-            <a href="/">Home</a>
-          </Link>
-          <Link>
-            <a href="/docs/intro/gettingStarted">Docs</a>
-          </Link>
-          <Link href="/guides">
-            <a href="/guides">Guides</a>
-          </Link>
-          <Link>
-            <a href="https://github.com/oslabs-beta/firecomm">
-              <i class="fa fa-github" />
-            </a>
-          </Link>
+          <NavCore />
         </NavStyle>
       </>
     );

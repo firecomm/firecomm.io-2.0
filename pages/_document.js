@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           {/* Step 5: Output the styles in the head  */}
           <script src="https://use.fontawesome.com/582265226c.js" />
           <link

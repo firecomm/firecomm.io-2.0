@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import Section from "./Section";
 
+import { mobileBreakpoint } from "../constants";
+
 const SidebarStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@ const SidebarStyled = styled.div`
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 25%;
   }
 `;
@@ -51,7 +53,10 @@ class Sidebar extends React.Component {
 
   render() {
     console.log("window width", this.props.windowWidth);
-    if (this.props.windowWidth < 480 && !this.props.sidebarActive) {
+    if (
+      this.props.windowWidth < mobileBreakpoint &&
+      !this.props.sidebarActive
+    ) {
       return null;
     } else {
       return (
