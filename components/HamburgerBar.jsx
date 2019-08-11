@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { loadGetInitialProps } from "next-server/dist/lib/utils";
 
 import { mobileBreakpoint } from "../constants";
-import { VerticalCenter } from "../styles/styles";
+import { VerticalCenter, Flex } from "../styles/styles";
 
 const SectionTitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
 `;
 
@@ -100,6 +100,11 @@ const Hamburger = styled.div`
 `;
 
 const HamburgerBarStyle = styled.div`
+  i {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
   width: 100%;
   height: 50px;
   background-color: ${props => props.theme.grey};
@@ -139,7 +144,12 @@ const HamburgerBar = props => {
           <span />
         </div>
       </Hamburger>
-      <SectionTitle>{props.activeSection}</SectionTitle>
+      <Flex>
+        <VerticalCenter>
+          <i class="fa fa-angle-right" />
+        </VerticalCenter>
+        <SectionTitle>{props.activeSection}</SectionTitle>
+      </Flex>
     </HamburgerBarStyle>
   );
 };

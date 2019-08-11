@@ -2,13 +2,24 @@ import styled from "styled-components";
 
 const SubsectionStyled = styled.h1`
   font-weight: 100;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   margin-left: 20px;
   color: ${props => props.theme.black};
+
+  :hover {
+    color: ${props => props.theme.mainColor};
+  }
 `;
 
 import { VerticalCenter } from "../styles/styles";
 
 const SectionStyled = styled.div`
+  h1 {
+    font-size: 17.5px;
+  }
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,7 +27,7 @@ const SectionStyled = styled.div`
   padding-right: 10px;
 
   i {
-    font-size: 20px;
+    font-size: 23px;
     transition: 200ms linear;
   }
 
