@@ -11,3 +11,8 @@ export const FlexWrap = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 `;
+
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+`;

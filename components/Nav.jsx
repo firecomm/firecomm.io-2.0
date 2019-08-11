@@ -4,22 +4,28 @@ import styled from "styled-components";
 import NavCore from "./NavCore";
 import { mobileBreakpoint } from "../constants";
 
+import { VerticalCenter, Flex } from "../styles/styles";
+
 const NavStyle = styled.section`
+  height:50px;
   display: flex;
   width: 100%;
-  font-size: 20px;
+  font-size: 17.5px;
   justify-content: ${props => (props.left ? "left" : "space-around")};
   background-color: ${props =>
     props.main ? props.theme.mainColor : props.theme.offColor};
 
   .logo {
-    font-size: 40px;
+    margin-top:2px;
+    font-size: 30px;
+    font-weight:700;
+    width:225px;
     color: ${props => props.theme.white};
   }
+
   .logo a {
-    display: flex;
-    flex-direction: row;
-    width: 200px;
+    margin-left:20px;
+    font-size: 25px;
   }
 
   .justify-left {
@@ -47,9 +53,16 @@ const Nav = props => {
     return (
       <NavStyle main>
         <div className="logo">
-          <a href="/">
-            <i class="fa fa-fire" /> Firecomm
-          </a>
+          <Flex>
+            <VerticalCenter>
+              <a href="">
+                <i class="fa fa-fire" />
+              </a>
+            </VerticalCenter>
+            <VerticalCenter>
+              <a href="/">Firecomm</a>
+            </VerticalCenter>
+          </Flex>
         </div>
         <NavCore />
       </NavStyle>
@@ -57,12 +70,19 @@ const Nav = props => {
   } else {
     return (
       <>
-        <NavStyle main>
+        <NavStyle main left>
           <div className="logo">
-            <a href="/">
-              <i class="fa fa-fire" /> Firecomm
-            </a>
-          </div>{" "}
+            <Flex>
+              <VerticalCenter>
+                <a href="">
+                  <i class="fa fa-fire" />
+                </a>
+              </VerticalCenter>
+              <VerticalCenter>
+                <a href="/">Firecomm</a>
+              </VerticalCenter>
+            </Flex>
+          </div>
         </NavStyle>
         <NavStyle main>
           <NavCore />
