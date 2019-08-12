@@ -52,7 +52,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    console.log("window width", this.props.windowWidth);
     if (
       this.props.windowWidth < mobileBreakpoint &&
       !this.props.sidebarActive

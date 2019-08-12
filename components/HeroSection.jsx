@@ -61,7 +61,9 @@ const HeroSection = () => {
         <HeroSubtitle>
           A complete framework for gRPC-node engineers.
         </HeroSubtitle>
-        <GetStartedButton>GET STARTED</GetStartedButton>
+        <GetStartedButton>
+          <a href="/docs/intro/gettingstarted">GET STARTED</a>
+        </GetStartedButton>
       </HeroColumn>
     </HeroFlex>
   );

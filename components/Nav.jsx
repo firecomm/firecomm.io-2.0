@@ -11,7 +11,7 @@ const NavStyle = styled.section`
   display: flex;
   width: 100%;
   font-size: 17.5px;
-  justify-content: ${props => (props.left ? "left" : "space-around")};
+  justify-content: ${props => (props.left ? "left" : "space-between")};
   background-color: ${props =>
     props.main ? props.theme.mainColor : props.theme.offColor};
 
@@ -49,6 +49,9 @@ const NavStyle = styled.section`
 `;
 
 const Nav = props => {
+  React.useEffect(() => {
+    console.log("windowwidth", props.windowWidth);
+  });
   if (props.windowWidth >= mobileBreakpoint) {
     return (
       <NavStyle main>
@@ -70,7 +73,7 @@ const Nav = props => {
   } else {
     return (
       <>
-        <NavStyle main left>
+        <NavStyle main>
           <div className="logo">
             <Flex>
               <VerticalCenter>
