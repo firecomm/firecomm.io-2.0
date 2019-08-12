@@ -22,3 +22,9 @@ export const Flex = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const WhiteSpacer = styled.section`
+  width: 100%;
+  background-color: ${props => props.theme.white};
+  height: ${props => props.height}px;
+`;

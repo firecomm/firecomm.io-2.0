@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 import { FlexWrap } from "../styles/styles";
 
@@ -198,6 +199,7 @@ class DocsLayout extends React.Component {
             </MarkdownStyles>
           )}
         </FlexWrap>
+        <Footer />
       </>
     );
   }

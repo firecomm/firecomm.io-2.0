@@ -4,6 +4,7 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 import { mobileBreakpoint } from "../constants";
 
@@ -44,6 +45,7 @@ class HomeLayout extends React.Component {
         <Head />
         <Nav windowWidth={this.state.windowWidth} />
         <div class="page-body">{this.props.children}</div>
+        <Footer />
       </>
     );
   }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SellingPoint from "./SellingPoint";
 import HeroSection from "./HeroSection";
 import { mobileBreakpoint } from "../constants";
+import { WhiteSpacer } from "../styles/styles";
 
 const LPWrapper = styled.div`
   background-color: blue;
@@ -62,6 +63,7 @@ const LandingPage = () => {
           );
         })}
       </SellingPoints>
+      <WhiteSpacer height="100" />
     </LPWrapper>
   );
 };
