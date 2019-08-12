@@ -44,7 +44,7 @@ const GetStartedButton = styled.button`
   border-radius: 4px;
 
   :hover {
-    color: ${props => props.theme.mainColor};
+    color: ${props => props.theme.mainColor} !important;
     cursor: pointer;
     background-color: ${props => props.theme.white};
     border: 2px solid ${props => props.theme.mainColor};
@@ -61,9 +61,9 @@ const HeroSection = () => {
         <HeroSubtitle>
           A complete framework for gRPC-node engineers.
         </HeroSubtitle>
-        <GetStartedButton>
-          <a href="/docs/intro/gettingstarted">GET STARTED</a>
-        </GetStartedButton>
+        <a href="/docs/intro/gettingstarted">
+          <GetStartedButton>GET STARTED</GetStartedButton>
+        </a>
       </HeroColumn>
     </HeroFlex>
   );
