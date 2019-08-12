@@ -12,6 +12,7 @@ const NavCoreFlex = styled.div`
     background-color: ${props => props.theme.darkMainColor};
     text-align: center;
     flex-grow: 1;
+    font-size: 15px;
   }
 
   .big-a {
@@ -30,6 +31,7 @@ const NavCoreFlex = styled.div`
 
     a {
       background-color: transparent;
+      font-size: 17.5px;
     }
     a:hover {
       background-color: transparent;
