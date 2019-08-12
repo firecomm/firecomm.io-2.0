@@ -3,6 +3,8 @@ import App, { Container, Head } from "next/app";
 
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
+import Highlights from "../styles/Highlights";
+
 const theme = {
   mainColor: "#e01634",
   darkMainColor: "#8E0E34",
@@ -49,6 +51,7 @@ class MyApp extends App {
     return (
       <Container>
         <GlobalStyle />
+        <Highlights />
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>

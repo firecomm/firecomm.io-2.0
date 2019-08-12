@@ -122,19 +122,20 @@ const HamburgerBar = props => {
       <Hamburger>
         <div
           id="nav-icon3"
+          class={props.sidebarActive ? "open" : ""}
           onClick={() => {
-            const hamburger = document.querySelector("#nav-icon3");
-            let open = false;
-            for (let i = 0; i < hamburger.classList.length; i++) {
-              if (hamburger.classList[i] === "open") {
-                open = true;
-              }
-            }
-            if (open) {
-              document.querySelector("#nav-icon3").classList.remove("open");
-            } else {
-              document.querySelector("#nav-icon3").classList.add("open");
-            }
+            // const hamburger = document.querySelector("#nav-icon3");
+            // let open = false;
+            // for (let i = 0; i < hamburger.classList.length; i++) {
+            //   if (hamburger.classList[i] === "open") {
+            //     open = true;
+            //   }
+            // }
+            // if (open) {
+            //   document.querySelector("#nav-icon3").classList.remove("open");
+            // } else {
+            //   document.querySelector("#nav-icon3").classList.add("open");
+            // }
             props.toggleSidebar();
           }}
         >
