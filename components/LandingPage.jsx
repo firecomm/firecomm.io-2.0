@@ -42,9 +42,9 @@ const sellingPointTitles = [
   "Flexible"
 ];
 const sellingPointContent = [
-  "Enjoy a unified, lightweight syntax for more readable, maintainable code across all four gRPC call-types.",
-  "Leverage built-in support for pluggable middleware,  health-check, SSL cert management, improved error handling, and interceptors.",
-  "All classes extend gRPC’s core classes, allowing you to access all advanced functionality, from retry configuration to service registration.",
+  "Enjoy a simplified, unobstrusive syntax for more readable code across all core gRPC functionality.",
+  "Leverage built-in support for pluggable middleware,  health-check, SSL certificate management, improved error handling, and interceptors.",
+  "All classes extend gRPC’s core classes, so you're in control of all advanced functionality, from retry configuration to service registration.",
   "Incrementally adoptable. Use as many or as few of the core features as you like."
 ];
 
