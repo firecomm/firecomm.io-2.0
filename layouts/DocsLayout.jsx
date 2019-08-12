@@ -7,7 +7,7 @@ import HamburgerBar from "../components/HamburgerBar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 
-import { FlexWrap } from "../styles/styles";
+import { FlexRow } from "../styles/styles";
 
 import { mobileBreakpoint } from "../constants";
 
@@ -20,118 +20,10 @@ const PageContainer = styled.section`
 const MarkdownStyles = styled.div`
   padding-left: 20px;
   padding-right: 20px;
-  width: 90%;
+  width: 75%;
 
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 60%;
-  }
-  /*!
-* Agate by Taufik Nurrohman <https://github.com/tovic>
-* ----------------------------------------------------
-*
-* #ade5fc
-* #a2fca2
-* #c6b4f0
-* #d36363
-* #fcc28c
-* #fc9b9b
-* #ffa
-* #fff
-* #333
-* #62c8f3
-* #888
-*
-*/
-
-  .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: #333;
-    color: white;
-  }
-
-  .hljs-name,
-  .hljs-strong {
-    font-weight: bold;
-  }
-
-  .hljs-code,
-  .hljs-emphasis {
-    font-style: italic;
-  }
-
-  .hljs-tag {
-    color: #62c8f3;
-  }
-
-  .hljs-variable,
-  .hljs-template-variable,
-  .hljs-selector-id,
-  .hljs-selector-class {
-    color: #ade5fc;
-  }
-
-  .hljs-string,
-  .hljs-bullet {
-    color: #a2fca2;
-  }
-
-  .hljs-type,
-  .hljs-title,
-  .hljs-section,
-  .hljs-attribute,
-  .hljs-quote,
-  .hljs-built_in,
-  .hljs-builtin-name {
-    color: #ffa;
-  }
-
-  .hljs-number,
-  .hljs-symbol,
-  .hljs-bullet {
-    color: #d36363;
-  }
-
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-literal {
-    color: #fcc28c;
-  }
-
-  .hljs-comment,
-  .hljs-deletion,
-  .hljs-code {
-    color: #888;
-  }
-
-  .hljs-regexp,
-  .hljs-link {
-    color: #c6b4f0;
-  }
-
-  .hljs-meta {
-    color: #fc9b9b;
-  }
-
-  .hljs-deletion {
-    background-color: #fc9b9b;
-    color: #333;
-  }
-
-  .hljs-addition {
-    background-color: #a2fca2;
-    color: #333;
-  }
-
-  .hljs a {
-    color: inherit;
-  }
-
-  .hljs a:focus,
-  .hljs a:hover {
-    color: inherit;
-    text-decoration: underline;
   }
 `;
 
@@ -139,7 +31,7 @@ class DocsLayout extends React.Component {
   constructor() {
     super();
     this.state = {
-      sidebarActive: true,
+      sidebarActive: false,
       windowWidth: mobileBreakpoint,
       activeSection: "Getting Started"
     };
@@ -183,10 +75,11 @@ class DocsLayout extends React.Component {
         <Head />
         <Nav windowWidth={this.state.windowWidth} />
         <HamburgerBar
+          sidebarActive={this.state.sidebarActive}
           activeSection={this.state.activeSection}
           toggleSidebar={() => this.toggleSidebar()}
         />
-        <FlexWrap>
+        <FlexRow>
           <Sidebar
             windowWidth={this.state.windowWidth}
             sidebarActive={this.state.sidebarActive}
@@ -198,7 +91,7 @@ class DocsLayout extends React.Component {
               <div class="page-body">{this.props.children}</div>
             </MarkdownStyles>
           )}
-        </FlexWrap>
+        </FlexRow>
         <Footer />
       </>
     );

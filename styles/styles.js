@@ -12,6 +12,11 @@ export const HorizontalCenter = styled.div`
   justify-content: center;
 `;
 
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const FlexWrap = styled.div`
   display: flex;
   flex-direction: row;
