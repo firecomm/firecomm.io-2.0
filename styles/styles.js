@@ -6,6 +6,12 @@ export const VerticalCenter = styled.div`
   justify-content: center;
 `;
 
+export const HorizontalCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
 export const FlexWrap = styled.div`
   display: flex;
   flex-direction: row;
