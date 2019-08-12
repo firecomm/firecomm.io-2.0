@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { HorizontalCenter } from "../styles/styles";
-
+import { mobileBreakpoint } from "../constants";
 //import images here later
 
 const thinking = "thinking";
@@ -13,8 +13,9 @@ const Improve = styled.div`
 `;
 
 const SellingPointTitle = styled.h1`
+  margin-top: 3px;
   color: ${props => props.theme.mainColor};
-  font-size: 27.5px;
+  font-size: 30px;
   font-weight: 700;
   text-align: center;
   padding: 0 25px 0 25px;
@@ -27,10 +28,15 @@ const SellingPointStyles = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 15px;
 
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
+    max-width: 250px;
   }
 `;
 
@@ -40,8 +46,10 @@ const ContentBody = styled.div`
 `;
 
 const ImageWrapper = styled.div`
+  margin-top: 15px;
   width: 100px;
   height: 100px;
+  margin-bottom: 0;
 `;
 
 const SellingPoint = props => {

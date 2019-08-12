@@ -25,10 +25,12 @@ const SellingPoints = styled.section`
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
-  background-color: brown;
+  justify-content: space-around;
+  background-color: ${props => props.theme.white};
 
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     flex-direction: row;
+    background-color: ${props => props.theme.grey};
   }
 `;
 
