@@ -43,10 +43,11 @@ const SellingPointStyles = styled.div`
 const ContentBody = styled.div`
   color: ${props => props.theme.black};
   padding: 0 22.5px 0 22.5px;
+  height: 120px;
 `;
 
 const ImageWrapper = styled.div`
-  margin-top: 15px;
+  margin-top: 10px;
   width: 100px;
   height: 100px;
   margin-bottom: 0;
@@ -55,11 +56,13 @@ const ImageWrapper = styled.div`
 const SellingPoint = props => {
   let imageSource = "";
   if (props.index === 0) {
-    imageSource = "/static/assets/thinking.png";
+    imageSource = "/static/assets/intuitive.png";
   } else if (props.index === 1) {
-    imageSource = "/static/assets/extended.png";
+    imageSource = "/static/assets/powerful.png";
+  } else if (props.index === 2) {
+    imageSource = "/static/assets/fullfeatured.png";
   } else {
-    imageSource = "/static/assets/improve.png";
+    imageSource = "/static/assets/flexible.png";
   }
 
   return (

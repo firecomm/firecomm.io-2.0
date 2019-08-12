@@ -36,14 +36,16 @@ const SellingPoints = styled.section`
 `;
 
 const sellingPointTitles = [
-  "Easy to reason about",
-  "Fully featured",
-  "Improved functionality"
+  "Intuitive",
+  "Powerful",
+  "Full-Featured",
+  "Flexible"
 ];
 const sellingPointContent = [
-  "With a Unified, lightweight syntax that enables you to get up and running with any type of call",
-  "All classes are extensions of gRPC’s core classes, allowing you to access all advanced functionality, from retry configuration to service registration.",
-  "Built-in Health-check service, improved server-side error handling, client interceptors, and pluggable middleware. "
+  "Enjoy a unified, lightweight syntax for more readable, maintainable code across all four gRPC call-types.",
+  "Leverage built-in support for pluggable middleware,  health-check, SSL cert management, improved error handling, and interceptors.",
+  "All classes extend gRPC’s core classes, allowing you to access all advanced functionality, from retry configuration to service registration.",
+  "Incrementally adoptable. Use as many or as few of the core features as you like."
 ];
 
 const LandingPage = () => {
