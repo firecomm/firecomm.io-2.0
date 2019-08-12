@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
 import SellingPoint from "./SellingPoint";
+import HeroSection from "./HeroSection";
 import { mobileBreakpoint } from "../constants";
 
 const LPWrapper = styled.div`
   background-color: blue;
 `;
 
-const HeroSection = styled.section`
-  background-color: red;
+const HeroSectionStyles = styled.section`
+  background-color: ${props => props.theme.white};
   display: flex;
-  height: 350px;
+  height: 375px;
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: ${props => props.theme.mainColor};
+  }
 `;
 
 const SellingPoints = styled.section`
@@ -40,7 +46,9 @@ const sellingPointContent = [
 const LandingPage = () => {
   return (
     <LPWrapper>
-      <HeroSection />
+      <HeroSectionStyles>
+        <HeroSection />
+      </HeroSectionStyles>
       <SellingPoints>
         {sellingPointTitles.map((title, index) => {
           return (
