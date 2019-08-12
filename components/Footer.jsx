@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { mobileBreakpoint } from "../constants";
+
 const FooterSection = styled.div`
-  width: 150px;
+  width: 100%;
   padding: 0 10px 0 10px;
   display: flex;
   flex-direction: column;
@@ -13,6 +15,10 @@ const FooterSection = styled.div`
 
   a {
     font-weight: 400;
+  }
+
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
+    width: 150px;
   }
 `;
 
@@ -28,7 +34,7 @@ const Bumper = styled.section`
 const FooterStyles = styled.section`
   padding: 15px 0 0 0;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
