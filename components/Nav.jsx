@@ -28,6 +28,10 @@ const NavStyle = styled.section`
     font-size: 25px;
   }
 
+  .logo a:hover {
+    text-decoration: none;
+  }
+
   .justify-left {
     justify-content: left !important;
   }
