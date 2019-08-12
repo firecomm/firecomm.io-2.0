@@ -21,6 +21,7 @@ const SidebarStyled = styled.div`
 
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 25%;
+    max-width: 250px;
   }
 `;
 
