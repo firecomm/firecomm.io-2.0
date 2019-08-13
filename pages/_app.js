@@ -3,6 +3,7 @@ import App, { Container, Head } from "next/app";
 
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
+import TableStyles from "../styles/TableStyles";
 import Highlights from "../styles/Highlights";
 
 const theme = {
@@ -52,6 +53,7 @@ class MyApp extends App {
       <Container>
         <GlobalStyle />
         <Highlights />
+        <TableStyles />
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>
