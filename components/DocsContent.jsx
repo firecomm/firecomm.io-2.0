@@ -10,7 +10,6 @@ import ReactMarkdown from "react-markdown";
 // });
 
 const DocsContent = ({ content, subsection }) => {
-  console.log(content);
   return (
     <DocsLayout subsection={subsection}>
       <ReactMarkdown source={content} renderers={{ code: CodeBlock }} />
