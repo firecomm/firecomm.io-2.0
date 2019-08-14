@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{"4R/9":function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/docs/core/stub",function(){var n=e("ElIL");return{page:n.default||n}}])},ElIL:function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),u=e.n(o),a=e("HVSj"),c=e("k1Dn");t.default=function(n){return u.a.createElement(a.a,{content:c.a})}}},[["4R/9",1,0]]]);
