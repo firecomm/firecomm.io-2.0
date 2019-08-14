@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"+iOR":function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),i=e.n(o),u=e("HVSj"),a=e("k1Dn");t.default=function(n){return i.a.createElement(u.a,{content:a.a})}},X5dZ:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/docs/core/build",function(){var n=e("+iOR");return{page:n.default||n}}])}},[["X5dZ",1,0]]]);

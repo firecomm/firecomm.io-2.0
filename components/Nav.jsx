@@ -15,6 +15,9 @@ const NavStyle = styled.section`
   background-color: ${props =>
     props.main ? props.theme.mainColor : props.theme.offColor};
 
+    img {
+      margin-top:4px;
+    }
   .logo {
     margin-top:2px;
     font-size: 30px;
@@ -63,7 +66,11 @@ const Nav = props => {
           <Flex>
             <VerticalCenter>
               <a href="">
-                <img src='/static/assets/logo_inverted.png' width="35px" height="40px" />
+                <img
+                  src="/static/assets/logo_inverted.png"
+                  width="35px"
+                  height="40px"
+                />
               </a>
             </VerticalCenter>
             <VerticalCenter>
@@ -81,8 +88,12 @@ const Nav = props => {
           <div className="logo">
             <Flex>
               <VerticalCenter>
-                <a href="">
-                <img src='/static/assets/logo_inverted.png' width="35px" height="40px" />
+                <a href="/">
+                  <img
+                    src="/static/assets/logo_inverted.png"
+                    width="35px"
+                    height="40px"
+                  />
                 </a>
               </VerticalCenter>
               <VerticalCenter>
