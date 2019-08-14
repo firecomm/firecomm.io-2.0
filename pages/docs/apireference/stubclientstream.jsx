@@ -1,10 +1,9 @@
 import DocsContent from "../../../components/DocsContent";
 
-
-import content from "../../../static/docs/Stub_Client_Stream.md";
+import content from "../../../static/docs/api reference/Stub_Client_Stream.md";
 
 const StubClientStream = props => {
-  return <DocsContent content={content} />;
+  return <DocsContent subsection="StubClientStream" content={content} />;
 };
 
 export default StubClientStream;
