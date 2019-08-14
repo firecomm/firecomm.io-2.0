@@ -34,17 +34,22 @@ class Sidebar extends React.Component {
         {
           title: "Getting Started",
           collapsed: false,
-          subsections: ["Intro","Concepts","Code Walkthrough"]
+          subsections: ["Intro", "Concepts", "Code Walkthrough"]
         },
         {
           title: "Core",
           collapsed: false,
-          subsections: ["Server","Stub","Build","ServerCalls","StubCalls"]
+          subsections: ["Server", "Stub", "Build", "ServerCalls", "StubCalls"]
         },
         {
           title: "Extensions",
           collapsed: false,
-          subsections: ["Middleware","Error Handling","Metadata","Interceptors"]
+          subsections: [
+            "Middleware",
+            "Error Handling",
+            "Metadata",
+            "Interceptors"
+          ]
         },
         // {
         //   title: "Guides",
@@ -52,10 +57,10 @@ class Sidebar extends React.Component {
         //   subsections: ["Authentication","Tracing"]
         // },
         {
-          title:"API Reference",
+          title: "API Reference",
           collapsed: false,
           subsections: []
-        },
+        }
         // {
         //   title:"gRPC",
         //   collapsed: false,
@@ -97,6 +102,7 @@ class Sidebar extends React.Component {
                 toggle={section => this.toggleSection(section)}
                 key={`section-${index}`}
                 {...el}
+                activeSection={this.props.activeSection}
                 changeActiveSection={section =>
                   this.props.changeActiveSection(section)
                 }

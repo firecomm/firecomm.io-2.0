@@ -28,8 +28,8 @@ const MarkdownStyles = styled.div`
 `;
 
 class DocsLayout extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       sidebarActive: false,
       windowWidth: mobileBreakpoint,
@@ -76,12 +76,13 @@ class DocsLayout extends React.Component {
         <Nav windowWidth={this.state.windowWidth} />
         <HamburgerBar
           sidebarActive={this.state.sidebarActive}
-          activeSection={this.state.activeSection}
+          activeSection={this.props.subsection}
           toggleSidebar={() => this.toggleSidebar()}
         />
         <FlexRow>
           <Sidebar
             windowWidth={this.state.windowWidth}
+            activeSection={this.props.subsection}
             sidebarActive={this.state.sidebarActive}
             changeActiveSection={section => this.changeActiveSection(section)}
           />

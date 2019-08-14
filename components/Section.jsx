@@ -6,7 +6,8 @@ const SubsectionStyled = styled.h1`
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 20px;
-  color: ${props => props.theme.black};
+  color: ${props =>
+    props.status === "active" ? props.theme.mainColor : props.theme.black};
 
   :hover {
     color: ${props => props.theme.mainColor};
@@ -45,14 +46,18 @@ const Section = ({
   collapsed,
   subsections,
   toggle,
-  changeActiveSection
+  changeActiveSection,
+  activeSection
 }) => {
   const subsectionsToRender = subsections.map(subtitle => {
     const section = title.toLowerCase().replace(" ", "");
     const subsection = subtitle.toLowerCase().replace(" ", "");
     return (
       <a href={`/docs/${section}/${subsection}`}>
-        <SubsectionStyled onClick={() => changeActiveSection(subtitle)}>
+        <SubsectionStyled
+          status={activeSection === subtitle ? "active" : "inactive"}
+          onClick={() => changeActiveSection(subtitle)}
+        >
           {subtitle}
         </SubsectionStyled>
       </a>

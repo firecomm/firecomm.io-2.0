@@ -9,10 +9,10 @@ import ReactMarkdown from "react-markdown";
 //   __html: html
 // });
 
-const DocsContent = ({ content }) => {
+const DocsContent = ({ content, subsection }) => {
   console.log(content);
   return (
-    <DocsLayout>
+    <DocsLayout subsection={subsection}>
       <ReactMarkdown source={content} renderers={{ code: CodeBlock }} />
       {/* <div className="markdown" dangerouslySetInnerHTML={wrapMarkup(content)} /> */}
     </DocsLayout>
