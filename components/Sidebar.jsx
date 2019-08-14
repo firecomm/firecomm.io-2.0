@@ -34,8 +34,38 @@ class Sidebar extends React.Component {
         {
           title: "Getting Started",
           collapsed: false,
-          subsections: ["intro", "about", "zeppy"]
-        }
+          subsections: ["Intro","Concepts","Code Walkthrough"]
+        },
+        {
+          title: "Core",
+          collapsed: false,
+          subsections: ["Server","Stub","Build","ServerCalls","StubCalls"]
+        },
+        {
+          title: "Extensions",
+          collapsed: false,
+          subsections: ["Middleware","Error Handling","Metadata","Interceptors"]
+        },
+        // {
+        //   title: "Guides",
+        //   collapsed: false,
+        //   subsections: ["Authentication","Tracing"]
+        // },
+        {
+          title:"API Reference",
+          collapsed: false,
+          subsections: []
+        },
+        // {
+        //   title:"gRPC",
+        //   collapsed: false,
+        //   subsections: []
+        // },
+        // {
+        //   title:"Protobuf",
+        //   collapsed: false,
+        //   subsections: []
+        // }
       ]
     };
   }

@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { HorizontalCenter } from "../styles/styles";
+import { HorizontalCenter, VerticalCenter } from "../styles/styles";
 
 const LogoFlex = styled.div`
   display: flex;
+  margin-bottom: 20px;
 `;
 
 const HeroFlex = styled.div`
@@ -14,7 +15,9 @@ const HeroFlex = styled.div`
 
 const HeroTitle = styled.h3`
   text-align: center;
-  font-size: 40px;
+  font-size: 65px;
+  margin: 0 0 0 15px;
+  padding-top: 10px;
   color: ${props => props.theme.mainColor};
 `;
 
@@ -27,7 +30,7 @@ const HeroColumn = styled.div`
 
 const HeroSubtitle = styled.h3`
   text-align: center;
-  font-size: 22.5px;
+  font-size: 27.5px;
   padding-left: 5px;
   padding-right: 5px;
   color: ${props => props.theme.black};
@@ -56,12 +59,17 @@ const HeroSection = () => {
     <HeroFlex>
       <HeroColumn>
         <LogoFlex>
-          <HeroTitle>Firecomm</HeroTitle>
+          <VerticalCenter>
+            <img src="/static/assets/logo.png" width="80px" height="100px" />
+          </VerticalCenter>
+          <VerticalCenter>
+            <HeroTitle>Firecomm</HeroTitle>
+          </VerticalCenter>
         </LogoFlex>
         <HeroSubtitle>
           A complete framework for gRPC-node engineers.
         </HeroSubtitle>
-        <a href="/docs/intro/gettingstarted">
+        <a href="/docs/gettingstarted/intro">
           <GetStartedButton>GET STARTED</GetStartedButton>
         </a>
       </HeroColumn>

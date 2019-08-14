@@ -63,7 +63,7 @@ const Nav = props => {
           <Flex>
             <VerticalCenter>
               <a href="">
-                <i class="fa fa-fire" />
+                <img src='/static/assets/logo_inverted.png' width="35px" height="40px" />
               </a>
             </VerticalCenter>
             <VerticalCenter>
@@ -82,7 +82,7 @@ const Nav = props => {
             <Flex>
               <VerticalCenter>
                 <a href="">
-                  <i class="fa fa-fire" />
+                <img src='/static/assets/logo_inverted.png' width="35px" height="40px" />
                 </a>
               </VerticalCenter>
               <VerticalCenter>
