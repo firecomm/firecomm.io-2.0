@@ -34,22 +34,17 @@ class Sidebar extends React.Component {
         {
           title: "Getting Started",
           collapsed: false,
-          subsections: ["Intro", "Concepts", "Code Walkthrough"]
+          subsections: ["Overview", "Concepts", "Intro"]
         },
         {
           title: "Core",
           collapsed: false,
-          subsections: ["Server", "Stub", "Build", "ServerCalls", "StubCalls"]
+          subsections: ["Build", "Server", "Server Calls", "Stub", "Stub Calls"]
         },
         {
           title: "Extensions",
           collapsed: false,
-          subsections: [
-            "Middleware",
-            "Error Handling",
-            "Metadata",
-            "Interceptors"
-          ]
+          subsections: ["Middleware", "Metadata", "Interceptors"]
         },
         // {
         //   title: "Guides",
@@ -59,7 +54,20 @@ class Sidebar extends React.Component {
         {
           title: "API Reference",
           collapsed: false,
-          subsections: []
+          subsections: [
+            "Build",
+            "Package",
+            "Server ClientStream Call",
+            "Server DuplexCall",
+            "Server Unary Call",
+            "Server ServerStream Call",
+            "Server",
+            "Stub ClientStream Call",
+            "Stub DuplexCall",
+            "Stub Unary Call",
+            "Stub ServerStream Call",
+            "Stub"
+          ]
         }
         // {
         //   title:"gRPC",
