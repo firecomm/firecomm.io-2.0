@@ -44,10 +44,10 @@ const NavCore = () => {
     <>
       <NavCoreFlex>
         <Link>
-          <a href="/docs/intro/gettingStarted">Getting Started</a>
+          <a href="/docs/gettingstarted/intro">Getting Started</a>
         </Link>
         <Link>
-          <a href="/docs/intro/gettingStarted">API</a>
+          <a href="/docs/gettingstarted/intro">API</a>
         </Link>
         <Link href="/guides">
           <a href="/guides">Guides</a>
