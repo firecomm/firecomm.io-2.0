@@ -1,6 +1,5 @@
 # Stub Client-Stream
 Object for sending **any number of** RPC Method **requests** and listening for **one** stream-ending RPC Method **response**.
-
 | Returned from          | Type   | Peer         | Description                                                                |
 |------------------------|--------|--------------|----------------------------------------------------------------------------|
 | `Stub.<RPCmethodName>()` | Object | Server Unary | `<RPCmethodName>` defined with `stream` on request or without `stream` on response in `proto`. Peer is defined by methodName at Server | 

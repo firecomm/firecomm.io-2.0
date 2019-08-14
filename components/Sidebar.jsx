@@ -26,47 +26,10 @@ const SidebarStyled = styled.div`
 `;
 
 class Sidebar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       test: true,
-      sections: [
-        {
-          title: "Getting Started",
-          collapsed: false,
-          subsections: ["Intro","Concepts","Code Walkthrough"]
-        },
-        {
-          title: "Core",
-          collapsed: false,
-          subsections: ["Server","Stub","Build","ServerCalls","StubCalls"]
-        },
-        {
-          title: "Extensions",
-          collapsed: false,
-          subsections: ["Middleware","Error Handling","Metadata","Interceptors"]
-        },
-        // {
-        //   title: "Guides",
-        //   collapsed: false,
-        //   subsections: ["Authentication","Tracing"]
-        // },
-        {
-          title:"API Reference",
-          collapsed: false,
-          subsections: []
-        },
-        // {
-        //   title:"gRPC",
-        //   collapsed: false,
-        //   subsections: []
-        // },
-        // {
-        //   title:"Protobuf",
-        //   collapsed: false,
-        //   subsections: []
-        // }
-      ]
     };
   }
 
@@ -91,12 +54,13 @@ class Sidebar extends React.Component {
     } else {
       return (
         <SidebarStyled>
-          {this.state.sections.map((el, index) => {
+          {this.props.sections.map((el, index) => {
             return (
               <Section
                 toggle={section => this.toggleSection(section)}
                 key={`section-${index}`}
                 {...el}
+                activeSection={this.props.activeSection}
                 changeActiveSection={section =>
                   this.props.changeActiveSection(section)
                 }
