@@ -24,7 +24,7 @@ class DocsLayout extends React.Component {
       {
         title: "Getting Started",
         collapsed: false,
-        subsections: ["Overview", "Concepts", "Intro"]
+        subsections: ["Concepts", "Intro"]
       },
       {
         title: "Core",
