@@ -1,7 +1,7 @@
 # Stub Duplex
 Object for sending **any number** of RPC Method **requests** and listening for **any number** of RPC Method **responses**.
 | Returned from          | Type   | Peer         | Description                                                                |
-|------------------------|--------|--------------|----------------------------------------------------------------------------|
+| ------------------------ | -------- | -------------- | ---------------------------------------------------------------------------- |
 | `Stub.<RPCmethodName>()` | Object | Server Duplex | `<RPCmethodName>` defined with `stream` on both request and response in `proto`. Peer is defined by methodName at Server | 
 
 ## Methods
@@ -14,7 +14,7 @@ alias:
 
 parameters:
 | Name          | Type     | Description                                                                                     |
-|---------------|----------|-------------------------------------------------------------------------------------------------|
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | message       | Object   | Properties should match the request `message` defined in the `proto`                            |
 | flags         | Number   | *Optional* Integer matching `propagation flag` Enumerable to modify how the message is written. |
 | flushCallback | Function | *Optional* Callback for when this chunk of data is flushed                                      |
@@ -28,7 +28,7 @@ alias:
 
 parameters:
 | Name     | Type     | Parameter | Description                                   |
-|----------|----------|-----------|-----------------------------------------------|
+| ---------- | ---------- | ----------- | ----------------------------------------------- |
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
 returns `Stub Duplex` to chain Methods
 
@@ -37,7 +37,7 @@ Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
 
 parameters:
 | Name     | Type/Options | Description                                                            |
-|----------|--------------|------------------------------------------------------------------------|
+| ---------- | -------------- | ------------------------------------------------------------------------ |
 | event    | String       | Event to listen for from peer.                                         |
 |          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
 |          | 'error'      | Listens for peer thrown error. Callback gets passed `Error`.            |

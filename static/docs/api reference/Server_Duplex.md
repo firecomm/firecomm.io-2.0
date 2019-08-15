@@ -1,7 +1,7 @@
 Server Duplex
 Object for sending **any number** of RPC Method **responses** and listening for **any number** of RPC Method **requests**.
 | Passed into as `call`      | Type   | Peer        | Description                                                                                                                            |
-|----------------------------|--------|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `<RPCmethodHandler(call)>` | Object | Stub Duplex | `<RPCmethodName>` defined with `stream` on both request and response in `proto`. Peer is defined by methodName at Server |
 
 ## Properties
@@ -15,7 +15,7 @@ Emits a `'data'` event and sends `message` to peer.
 
 parameters:
 | Name          | Type     | Description                                                                                     |
-|---------------|----------|-------------------------------------------------------------------------------------------------|
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | metadata       | Object   | Metadata to be sent to peer. Keys are normalized to lowercase ASCII. |
 returns `Server Duplex` to chain Methods
 

@@ -1,7 +1,7 @@
 # Server Stream
 Object for sending **any number** of RPC Method **responses** and listening for **one** RPC Method **request**.
 | Passed into as `call`      | Type   | Peer        | Description                                                                                                                            |
-|----------------------------|--------|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `<RPCmethodHandler(call)>` | Object | Stub Duplex | `<RPCmethodName>` defined without `stream` on request and with `stream` on response in `proto`. Peer is defined by methodName at Server |
 
 ## Properties
@@ -15,7 +15,7 @@ Emits a `'data'` event and sends `message` to peer.
 
 parameters:
 | Name          | Type     | Description                                                                                     |
-|---------------|----------|-------------------------------------------------------------------------------------------------|
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | metadata       | Object   | Metadata to be sent to peer. Keys are normalized to lowercase ASCII. |
 returns `Server Stream`
 
@@ -25,7 +25,7 @@ Emits a `'data'` event and sends `message` to peer.
 
 parameters:
 | Name          | Type     | Description                                                                                     |
-|---------------|----------|-------------------------------------------------------------------------------------------------|
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | message       | Object   | Properties should match the request `message` defined in the `proto`                            |
 returns `Server Stream`
 
@@ -34,7 +34,7 @@ Listener for `'error'` event from peer.
 
 parameters:
 | Name     | Type     | Parameter | Description                                   |
-|----------|----------|-----------|-----------------------------------------------|
+| ---------- | ---------- | ----------- | ----------------------------------------------- |
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
 returns `Server Stream`
 
@@ -43,7 +43,7 @@ Listener for `'data'` event from peer.
 
 parameters:
 | Name     | Type/Options | Description                                                            |
-|----------|--------------|------------------------------------------------------------------------|
+| ---------- | -------------- | ------------------------------------------------------------------------ |
 | event    | String       | Event to listen for from peer.                                         |
 |          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
 | callback | Function     | Is passed `Message` based on event.     |
@@ -54,7 +54,7 @@ Non-chainable method that cancels ongoing connection. Results in the call ending
 
 parameters:
 | Name          | Type     | Description                                                                                     |
-|---------------|----------|-------------------------------------------------------------------------------------------------|
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | error       | Error   | Error to be sent to Peer                            |
 | trailers       | Object   | Metadata to be sent to peer with error                            |
 
