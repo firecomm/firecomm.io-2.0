@@ -8,6 +8,8 @@ const MarkdownStyles = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   width: 85%;
+  font-size: 18px;
+  line-height: 27px;
 
   a {
     color: ${props => props.theme.mainColor};
