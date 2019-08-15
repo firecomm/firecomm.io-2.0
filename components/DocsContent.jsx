@@ -9,6 +9,10 @@ const MarkdownStyles = styled.div`
   padding-right: 20px;
   width: 100%;
 
+  a {
+    color: ${props => props.theme.mainColor};
+  }
+
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 65%;
     padding-left: 5%;
