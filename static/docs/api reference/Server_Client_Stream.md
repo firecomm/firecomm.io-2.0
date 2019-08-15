@@ -1,4 +1,19 @@
 # Server Client-Stream Response
+
+```javascript
+// /server/handlers.js
+function someServerClientStreamHandler(response) {
+  response
+    .on('data', (data) => console.log(data))
+    .on('metadata', (metadata) => metadata.getMap())
+    .on('error', (err) => console.error(err))
+
+  // stream ending response
+  response
+    .send({message: 'property', key: 'proto-defined'})
+}
+```
+
 Object for sending **one** stream-ending RPC Method **response** and listening for **any number** of RPC Method **requests**.
 
 | Passed into as `call`      | Type   | Peer        | Description                                                                                                                            |

@@ -12,7 +12,7 @@ module.exports = package;
 // /server/server.js
 const { Server } = require( 'firecomm' );
 const package = require( '../some/package.js' );
-const someHandler } = require ( './someHandlers.js );
+const someHandler } = require ( './someHandlers.js' );
 
 new Server()
   .addService( package.ServiceName,   {
