@@ -52,18 +52,18 @@ class DocsLayout extends React.Component {
         title: "API Reference",
         collapsed: true,
         subsections: [
-          "Build",
-          "Package",
+          "Build Function",
+          "Package Object",
           "Server ClientStream Call",
           "Server DuplexCall",
           "Server Unary Call",
           "Server ServerStream Call",
-          "Server",
+          "Server Class",
           "Stub ClientStream Call",
           "Stub DuplexCall",
           "Stub Unary Call",
           "Stub ServerStream Call",
-          "Stub"
+          "Stub Class"
         ]
       }
       // {
