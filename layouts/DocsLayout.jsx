@@ -28,12 +28,19 @@ class DocsLayout extends React.Component {
       },
       {
         title: "Core",
-        collapsed: true,
-        subsections: ["Build", "Server", "Server Calls", "Stub", "Stub Calls"]
+        collapsed: false,
+        subsections: [
+          "Core Overview",
+          "Build",
+          "Server",
+          "Server Calls",
+          "Stub",
+          "Stub Calls"
+        ]
       },
       {
         title: "Extensions",
-        collapsed: true,
+        collapsed: false,
         subsections: ["Middleware", "Metadata", "Interceptors"]
       },
       // {
@@ -45,18 +52,18 @@ class DocsLayout extends React.Component {
         title: "API Reference",
         collapsed: true,
         subsections: [
-          "Build",
-          "Package",
+          "Build Function",
+          "Package Object",
           "Server ClientStream Call",
           "Server DuplexCall",
           "Server Unary Call",
           "Server ServerStream Call",
-          "Server",
+          "Server Class",
           "Stub ClientStream Call",
           "Stub DuplexCall",
           "Stub Unary Call",
           "Stub ServerStream Call",
-          "Stub"
+          "Stub Class"
         ]
       }
       // {
@@ -79,9 +86,9 @@ class DocsLayout extends React.Component {
           title: sections[i].subsections[j],
           link:
             "/docs/" +
-            sections[i].title.toLowerCase().replace(" ", "") +
+            sections[i].title.toLowerCase().replace(/[ ]/g, "") +
             "/" +
-            sections[i].subsections[j].toLowerCase().replace(" ", "")
+            sections[i].subsections[j].toLowerCase().replace(/[ ]/g, "")
         };
         linksArray.push(linkObject);
         sectionIndeces[linkObject.title] = trueIndex;

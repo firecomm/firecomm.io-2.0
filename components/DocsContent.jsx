@@ -7,7 +7,11 @@ import { mobileBreakpoint } from "../constants";
 const MarkdownStyles = styled.div`
   padding-left: 20px;
   padding-right: 20px;
-  width: 100%;
+  width: 85%;
+
+  a {
+    color: ${props => props.theme.mainColor};
+  }
 
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 65%;
