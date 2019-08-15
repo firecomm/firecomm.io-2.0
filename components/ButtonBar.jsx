@@ -1,23 +1,41 @@
 import styled from "styled-components";
+
+import { mobileBreakpoint } from "../constants";
+
 const ButtonBarStyles = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-
-  .left {
-    position: relative;
-    left: 0;
-  }
-
-  .right {
-    position: relative;
-    right: 0;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   button {
-    width: 200px;
-    color: black;
-    border: black 2px solid;
+    width: 130px;
+    height: 40px;
+    color: ${props => props.theme.mainColor};
+    border: ${props => props.theme.mainColor} 2px solid;
+    border-radius: 4px;
+  }
+
+  button i {
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  button .fa-arrow-left {
+    margin-right: 5px;
+  }
+
+  button .fa-arrow-right {
+    margin-left: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: ${props => props.theme.white};
+    background-color: ${props => props.theme.mainColor};
+    border: ${props => props.theme.white} 2px solid;
   }
 `;
 const ButtonBar = props => {
@@ -28,15 +46,21 @@ const ButtonBar = props => {
   return (
     <ButtonBarStyles>
       {index !== 0 ? (
-        <a class="left" href={props.linksArray[index - 1].link}>
-          <button>hello</button>
+        <a href={props.linksArray[index - 1].link}>
+          <button>
+            <i class="fa fa-arrow-left" />
+            {props.linksArray[index - 1].title.toUpperCase()}
+          </button>
         </a>
       ) : (
         <div />
       )}
       {index !== props.linksArray.length - 1 ? (
-        <a class="right" href={props.linksArray[index + 1].link}>
-          <button>hello</button>
+        <a href={props.linksArray[index + 1].link}>
+          <button>
+            {props.linksArray[index + 1].title.toUpperCase()}{" "}
+            <i class="fa fa-arrow-right" />
+          </button>
         </a>
       ) : (
         <div />
