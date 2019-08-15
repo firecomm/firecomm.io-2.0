@@ -1,5 +1,6 @@
  # Stub Client-Stream
 Object for sending **any number of** RPC Method **requests** and listening for **one** stream-ending RPC Method **response**.
+
 | Returned from          | Type   | Peer         | Description                                                                |
 | ------------------------ | -------- | -------------- | ---------------------------------------------------------------------------- |
 | `Stub.<RPCmethodName>()` | Object | Server Unary | `<RPCmethodName>` defined with `stream` on request or without `stream` on response in `proto`. Peer is defined by methodName at Server | 
@@ -13,6 +14,7 @@ alias:
 > `.write(message, flags, flushCallback)`
 
 parameters:
+
 | Name          | Type     | Description                                                                                     |
 | --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | message       | Object   | Properties should match the request `message` defined in the `proto`                            |
@@ -27,6 +29,7 @@ alias:
 > `.on('error', callback)`
 
 parameters:
+
 | Name     | Type     | Parameter | Description                                   |
 | ---------- | ---------- | ----------- | ----------------------------------------------- |
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
@@ -36,6 +39,7 @@ returns `Stub Client-Stream` to chain Methods
 Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
 
 parameters:
+
 | Name     | Type/Options | Description                                                            |
 | ---------- | -------------- | ------------------------------------------------------------------------ |
 | event    | String       | Event to listen for from peer.                                         |
