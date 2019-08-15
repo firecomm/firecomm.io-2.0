@@ -14,6 +14,7 @@ const ButtonBarStyles = styled.div`
     width: 130px;
     padding: 10px;
     color: ${props => props.theme.mainColor};
+    background-color: ${props => props.theme.white};
     border: ${props => props.theme.mainColor} 2px solid;
     border-radius: 4px;
   }
