@@ -65,7 +65,7 @@ const Nav = props => {
         <div className="logo">
           <Flex>
             <VerticalCenter>
-              <a href="">
+              <a href="/">
                 <img
                   src="/static/assets/logo_inverted.png"
                   width="35px"

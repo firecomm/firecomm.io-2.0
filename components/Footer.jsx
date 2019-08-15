@@ -50,21 +50,27 @@ const Footer = props => {
           <strong>Docs</strong>
         </h5>
         <h5>
-          <a href="/docs">Getting Started</a>
+          <a href={`/docs/gettingstarted/intro`}>Getting Started</a>
         </h5>
         <h5>
-          <a href="/docs">Other</a>
+          <a href={`/docs/core/overview`}>Overview</a>
         </h5>
         <h5>
-          <a href="/docs">Other</a>
+          <a href={`/docs/extensions/middleware`}>Middleware</a>
         </h5>
       </FooterSection>
       <FooterSection>
         <h5>
-          <strong>Guides</strong>
+          <strong>API Reference</strong>
         </h5>
         <h5>
-          <a href="/docs">Getting Started</a>
+          <a href="/docs/core/server">Server</a>
+        </h5>
+        <h5>
+          <a href="/docs/core/stub">Stub</a>
+        </h5>
+        <h5>
+          <a href="/docs/core/build">Build</a>
         </h5>
       </FooterSection>
       <FooterSection>
@@ -72,7 +78,7 @@ const Footer = props => {
           <strong>More</strong>
         </h5>
         <h5>
-          <a href="https://github.com/oslabs-beta/firecomm">Github</a>
+          <a href="https://github.com/firecomm/firecomm">Github</a>
         </h5>
       </FooterSection>
       <Bumper>
