@@ -1,9 +1,9 @@
 # Build
 
-To build a gRPC package, you first have to create a `.proto` file. More on that in the .proto section (coming soon) and on the [official protocol buffer page](https://developers.google.com/protocol-buffers/docs/overview).
+To build a gRPC package, you first have to create a `*.proto` file. More on that in the proto section (coming soon) and on the [official protocol buffer page](https://developers.google.com/protocol-buffers/docs/overview).
 
 
-Build starts with a .proto. Take the following .proto file as an example. 
+Build starts with a `*.proto` file. Take the following `*.proto` file as an example. 
 
 ```protobuf
 package myPackage
