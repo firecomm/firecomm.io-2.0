@@ -1,5 +1,6 @@
 # Stub Unary
 Object for sending **one** RPC Method **request** and listening for **one** RPC Method **response**.
+
 | Returned from          | Type   | Peer         | Description                                                                |
 | ------------------------ | -------- | -------------- | ---------------------------------------------------------------------------- |
 | `Stub.<RPCmethodName>()` | Object | Server Unary | `<RPCmethodName>` defined without `stream` on request or response in `proto`. Peer is defined by methodName at Server | 
@@ -13,6 +14,7 @@ alias:
 > `.write(message)`
 
 parameters:
+
 | Name    | Type   | Description                                                    |
 | --------- | -------- | ---------------------------------------------------------------- |
 | message | Object | Properties should match the request `message` defined in the `proto` |
@@ -25,6 +27,7 @@ alias:
 > `.on('error', callback)`
 
 parameters:
+
 | Name     | Type     | Parameter | Description                                   |
 | ---------- | ---------- | ----------- | ----------------------------------------------- |
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
@@ -34,6 +37,7 @@ returns `Stub Unary` to chain Methods
 Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
 
 parameters:
+
 | Name     | Type/Options | Description                                                            |
 | ---------- | -------------- | ------------------------------------------------------------------------ |
 | event    | String       | Event to listen for from peer.                                         |
