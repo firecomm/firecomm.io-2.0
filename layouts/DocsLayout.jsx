@@ -28,12 +28,19 @@ class DocsLayout extends React.Component {
       },
       {
         title: "Core",
-        collapsed: true,
-        subsections: ["Build", "Server", "Server Calls", "Stub", "Stub Calls"]
+        collapsed: false,
+        subsections: [
+          "Overview",
+          "Build",
+          "Server",
+          "Server Calls",
+          "Stub",
+          "Stub Calls"
+        ]
       },
       {
         title: "Extensions",
-        collapsed: true,
+        collapsed: false,
         subsections: ["Middleware", "Metadata", "Interceptors"]
       },
       // {
