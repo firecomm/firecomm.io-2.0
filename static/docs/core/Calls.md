@@ -14,9 +14,6 @@ Firecomm has a unified syntax which makes each of these easy to interact with.
 
 ## Server Calls
 
-
-```
-
 ## Stub Calls
 
 

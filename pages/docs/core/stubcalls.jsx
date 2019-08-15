@@ -1,6 +1,6 @@
 import DocsContent from "../../../components/DocsContent";
 
-import content from "../../../static/docs/core/Calls.md";
+import content from "../../../static/docs/core/StubCalls.md";
 
 const StubCalls = props => {
   return <DocsContent subsection="Stub Calls" content={content} />;

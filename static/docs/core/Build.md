@@ -31,7 +31,7 @@ const proto_path = require( '../some/proto/path' );
 const package = build( proto_path, { bytes: String } );
 
 // Packaged service
-const service package.Greeter
+const service = package.Greeter
 
 // export for use in other files
 module.exports = {

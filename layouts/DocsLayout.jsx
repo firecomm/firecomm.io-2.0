@@ -30,11 +30,12 @@ class DocsLayout extends React.Component {
         title: "Core",
         collapsed: false,
         subsections: [
-          "Core Overview",
+          "Overview",
           "Build",
           "Server",
-          "Server Calls",
           "Stub",
+          "Calls",
+          "Server Calls",
           "Stub Calls"
         ]
       },
