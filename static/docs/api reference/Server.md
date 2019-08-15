@@ -42,7 +42,18 @@ parameters:
 |                   |                     | middlewareArray | Array of functions from index 0 up to be passed `Server Unary`, `Server Client-Stream Response`, `Server Stream`, or `Server Duplex` based on RPC method definition in `proto`. |
 | serviceMiddleware | Array               |                 | Array of functions from index 0 up to be passed `Server Unary`, `Server Client-Stream Response`, `Server Stream`, or `Server Duplex` based on RPC method definition in `proto`. |
 | errorCallback     | Function            |                 |                                                                                                                                                                                 |
-returns `undefined`
+returns `Server` for chaining methods
+
+### .addService(serviceName)
+
+parameters:
+
+| Name              | Type/Properties     | Values          | Description                                                                                                                                                                     |
+| ------------------- | --------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| address(es)       | string or Array |                 | String or Array of Strings of addresses in format '0.0.0.0:3000'                                                                       |
+| sslConfig(s)    | Object or Array             |                 | Object or Array of Objects with properties ssl `privateKey` and ssl `certificate`.                                                                                                         |
+
+returns `Server` for chaining methods
 
 
 
