@@ -79,9 +79,9 @@ class DocsLayout extends React.Component {
           title: sections[i].subsections[j],
           link:
             "/docs/" +
-            sections[i].title.toLowerCase().replace(" ", "") +
+            sections[i].title.toLowerCase().replace(/[ ]/g, "") +
             "/" +
-            sections[i].subsections[j].toLowerCase().replace(" ", "")
+            sections[i].subsections[j].toLowerCase().replace(/[ ]/g, "")
         };
         linksArray.push(linkObject);
         sectionIndeces[linkObject.title] = trueIndex;
