@@ -17,16 +17,6 @@ const PageContainer = styled.section`
   width: ${props => (props.big ? "100%" : "75%")};
 `;
 
-const MarkdownStyles = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 75%;
-
-  @media only screen and (min-width: ${mobileBreakpoint}px) {
-    width: 60%;
-  }
-`;
-
 class DocsLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -81,6 +71,8 @@ class DocsLayout extends React.Component {
       // }
     ];
     const linksArray = [];
+    const sectionIndeces = {};
+    let trueIndex = 0;
     for (let i = 0; i < sections.length; i++) {
       for (let j = 0; j < sections[i].subsections.length; j++) {
         const linkObject = {
@@ -92,14 +84,19 @@ class DocsLayout extends React.Component {
             sections[i].subsections[j].toLowerCase().replace(" ", "")
         };
         linksArray.push(linkObject);
+        sectionIndeces[linkObject.title] = trueIndex;
+        trueIndex++;
       }
     }
+    console.log(linksArray);
+    console.log(sectionIndeces);
     this.state = {
       sidebarActive: false,
       windowWidth: mobileBreakpoint,
       activeSection: "Getting Started",
       sections,
-      linksArray
+      linksArray,
+      sectionIndeces
     };
   }
 
@@ -155,9 +152,12 @@ class DocsLayout extends React.Component {
           />
           {this.state.sidebarActive &&
           this.state.windowWidth <= mobileBreakpoint ? null : (
-            <MarkdownStyles>
-              <div class="page-body">{this.props.children}</div>
-            </MarkdownStyles>
+            <>
+              {this.props.renderProps({
+                linksArray: this.state.linksArray,
+                sectionIndeces: this.state.sectionIndeces
+              })}
+            </>
           )}
         </FlexRow>
         <Footer />
