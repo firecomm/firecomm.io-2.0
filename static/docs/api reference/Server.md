@@ -44,7 +44,9 @@ parameters:
 | errorCallback     | Function            |                 |                                                                                                                                                                                 |
 returns `Server` for chaining methods
 
-### .addService(serviceName)
+### .bind(addresses, sslConfigs)
+
+Method for binding any number of socket addresses and ssl configurations.
 
 parameters:
 
@@ -55,5 +57,9 @@ parameters:
 
 returns `Server` for chaining methods
 
+### .start()
 
+Method to start server. Must be invoked last.
+
+returns `undefined`
 
