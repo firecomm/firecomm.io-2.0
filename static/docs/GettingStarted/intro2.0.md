@@ -200,21 +200,3 @@ const bidi = stub.bidiMath({thisIsMetadata: 'let the races begin'})
 > Run your new firecomm/gRPC-Node client with: `node /clients/chattyMath.js`. It may also be worthwhile to map this command to a custom command like `npm run math` in your `package.json`.
 
 Now enjoy the power of gRPCs! Feel free to construct multiple Stubs to any number of ports, bind any number of ports to the Server, experiment and enjoy!
-```javascript
-// /clients/heavyMath.js
-const { Stub } = require( 'firecomm' );
-const package = require( '../package.js' )
-const heavyMathStub = new Stub( 
-	package.HeavyMath, 
-	'localhost: 2999',
-);
-heavyMathStub.UnaryMath( MESSAGE );
-  // some logic to warrant a streaming response
-  clientStream.write( MESSAGE );
-const bidiStream = 
-  heavyMathStub.BidiMath( MESSAGE );
-  // listeners for stream from server
-  serverStream.on( 'data', response => 
-  someFunctionality(request));
-```
-> Run your new firecomm/gRPC-Node client with: `node /clients/heavyMath.js`. It may also be worthwhile to map this command to a custom command like `npm run math` in your `package.json`.

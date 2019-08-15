@@ -1,5 +1,9 @@
 # firecomm.Server
 
+```javascript
+
+```
+
 ## Constructor
 ```javascript
 new firecomm.Server([options])
