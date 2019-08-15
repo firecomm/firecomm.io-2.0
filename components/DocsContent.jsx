@@ -9,6 +9,7 @@ const MarkdownStyles = styled.div`
   padding-right: 20px;
   width: 85%;
   font-size: 18px;
+  margin-top: 20px;
   line-height: 27px;
 
   a {
