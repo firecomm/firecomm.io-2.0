@@ -23,7 +23,7 @@ message HelloReply {
 }
 ```
 
-From there, you will likely want to access the Services on your .proto packaged object. These can be accessed by the properties on their name. Here's an example of what that would look like.
+From there, you will likely want to access the Services on your .proto packaged object. These can be accessed as top level properties on the object, matching the name inside of your proto file. Here's an example of what that would look like.
 
 ```javascript
 const { build } = require( 'firecomm' );
