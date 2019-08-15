@@ -33,18 +33,6 @@ class Sidebar extends React.Component {
     };
   }
 
-  toggleSection(section) {
-    this.setState(state => {
-      let sections = Object.assign(state.sections);
-      for (let i = 0; i < sections.length; i++) {
-        if (sections[i].title === section) {
-          sections[i].collapsed = !state.sections[i].collapsed;
-          return { sections };
-        }
-      }
-    });
-  }
-
   render() {
     if (
       this.props.windowWidth < mobileBreakpoint &&
@@ -57,7 +45,7 @@ class Sidebar extends React.Component {
           {this.props.sections.map((el, index) => {
             return (
               <Section
-                toggle={section => this.toggleSection(section)}
+                toggle={section => this.props.toggleSection(section)}
                 key={`section-${index}`}
                 {...el}
                 activeSection={this.props.activeSection}

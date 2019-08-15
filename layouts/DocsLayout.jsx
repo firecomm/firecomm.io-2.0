@@ -88,8 +88,8 @@ class DocsLayout extends React.Component {
         trueIndex++;
       }
     }
-    console.log(linksArray);
-    console.log(sectionIndeces);
+    // console.log(linksArray);
+    // console.log(sectionIndeces);
     this.state = {
       sidebarActive: false,
       windowWidth: mobileBreakpoint,
@@ -108,7 +108,7 @@ class DocsLayout extends React.Component {
   }
 
   changeActiveSection(section) {
-    console.log(section);
+    // console.log(section);
     this.setState(state => {
       return { activeSection: section };
     });
@@ -118,6 +118,18 @@ class DocsLayout extends React.Component {
     window.addEventListener("resize", this.handleResize.bind(this));
     this.setState(state => {
       return { windowWidth: window.innerWidth };
+    });
+  }
+
+  toggleSection(section) {
+    this.setState(state => {
+      let sections = Object.assign(state.sections);
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].title === section) {
+          sections[i].collapsed = !state.sections[i].collapsed;
+          return { sections };
+        }
+      }
     });
   }
 
@@ -144,6 +156,7 @@ class DocsLayout extends React.Component {
         />
         <FlexRow>
           <Sidebar
+            toggleSection={section => this.toggleSection(section)}
             windowWidth={this.state.windowWidth}
             activeSection={this.props.subsection}
             sections={this.state.sections}
