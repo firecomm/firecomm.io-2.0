@@ -1,4 +1,26 @@
 # Stub Unary
+
+```javascript
+// /clients/someClient.js
+const { Stub } = require( 'firecomm' );
+const package = require( '../package.js' )
+const stub = new Stub( 
+  package.SomeService, 
+  'localhost: 3000',
+);
+
+const unary = stub.someServerStream({thisIsMetadata: 'example'})
+  .send({one: 'request'})
+  .on( 'metadata', (metadata) => {
+    console.log(metadata.getMap())
+  })
+  .on( 'error', (err) => console.error(err))
+  .on( 'data', (data) => {
+    console.log(data);
+  })
+  // only listens once and sends once
+```
+
 Object for sending **one** RPC Method **request** and listening for **one** RPC Method **response**.
 
 | Returned from          | Type   | Peer         | Description                                                                |
@@ -6,32 +28,6 @@ Object for sending **one** RPC Method **request** and listening for **one** RPC 
 | `Stub.<RPCmethodName>()` | Object | Server Unary | `<RPCmethodName>` defined without `stream` on request or response in `proto`. Peer is defined by methodName at Server | 
 
 ## Methods
-### `.send(message)`
-
-Emits a `'data'` event and sends `message` to peer.
-
-alias:
-> `.write(message)`
-
-parameters:
-
-| Name    | Type   | Description                                                    |
-| --------- | -------- | ---------------------------------------------------------------- |
-| message | Object | Properties should match the request `message` defined in the `proto` |
-returns `Stub Unary` to chain Methods
-
-### `.catch(callback)`
-Listener for `'error'` event from peer.
-
-alias:
-> `.on('error', callback)`
-
-parameters:
-
-| Name     | Type     | Parameter | Description                                   |
-| ---------- | ---------- | ----------- | ----------------------------------------------- |
-| callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
-returns `Stub Unary` to chain Methods
 
 ### `.on(event, callback)`
 Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
@@ -46,6 +42,35 @@ parameters:
 |          | 'metadata'   | Listens for Metadata object from peer. Callback gets passed `Metadata`. |
 |          | 'status'     | Listens for change in connection status. Callback gets passed `Status`. |
 | callback | Function     | Is passed `Message`, `Error`, `Metadata`, `Status` based on event.     |
+returns `Stub Unary` to chain Methods
+
+### `.send(message, flags, flushCallback)`
+
+Emits a `'data'` event and sends `message` to peer.
+
+alias:
+> `.write(message, flags, flushCallback)`
+
+parameters:
+
+| Name          | Type     | Description                                                                                     |
+| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+| message       | Object   | Properties should match the request `message` defined in the `proto`                            |
+| flags         | Number   | *Optional* Integer matching `propagation flag` Enumerable to modify how the message is written. |
+| flushCallback | Function | *Optional* Callback for when this chunk of data is flushed                                      |
+returns `Stub Unary` to chain Methods
+
+### `.catch(callback)`
+Listener for `'error'` event from peer.
+
+alias:
+> `.on('error', callback)`
+
+parameters:
+
+| Name     | Type     | Parameter | Description                                   |
+| ---------- | ---------- | ----------- | ----------------------------------------------- |
+| callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
 returns `Stub Unary` to chain Methods
 
 ### `.cancel()`
