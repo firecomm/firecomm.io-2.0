@@ -47,11 +47,11 @@ const NavCore = () => {
           <a href="/docs/gettingstarted/intro">Getting Started</a>
         </Link>
         <Link>
-          <a href="/docs/gettingstarted/intro">API</a>
+          <a href="docs/apireference/build">API</a>
         </Link>
-        <Link href="/guides">
+        {/* <Link href="/guides">
           <a href="/guides">Guides</a>
-        </Link>
+        </Link> */}
         <Link>
           <a href="https://github.com/oslabs-beta/firecomm">
             <i class="fa fa-github" />
