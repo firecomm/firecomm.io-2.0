@@ -1,4 +1,12 @@
 # firecomm.build()
+
+```javascript
+const { build } = require('firecomm');
+const proto_path = require('../some/proto/path');
+const package = build(proto_path, {bytes: String});
+module.exports = package;
+```
+
 Build step function for compiling the `proto` into JavaScript.
 
 ## firecomm.build(proto_path, configObject)
