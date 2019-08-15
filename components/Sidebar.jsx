@@ -8,7 +8,8 @@ import { mobileBreakpoint } from "../constants";
 const SidebarStyled = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  margin-bottom: 10px;
   width: 100%;
   font-size: 7.5px;
   font-weight: 400;

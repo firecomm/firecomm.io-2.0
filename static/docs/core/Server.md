@@ -21,7 +21,7 @@ First is to understand the constructor. The constructor takes in the following o
 
 #### Uncaught Error Handling
 
-In vanilla gRPC, uncaught errors thrown inside of any method handler crashes the server instance.
+In vanilla gRPC, uncaught errors thrown inside of any method handler crashes the server instance. Firecomm allows you to input your own error-handler to customize your own functionality.
 
 An example Server with a config object and an error handler.
 

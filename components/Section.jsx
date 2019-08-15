@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SubsectionStyled = styled.h1`
   font-weight: 100;
-  font-size: 15px;
+  font-size: 18px;
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 20px;
@@ -18,7 +18,7 @@ import { VerticalCenter } from "../styles/styles";
 
 const SectionStyled = styled.div`
   h1 {
-    font-size: 17.5px;
+    font-size: 25px;
   }
 
   display: flex;

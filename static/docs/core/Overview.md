@@ -1,6 +1,6 @@
 # Core Concepts
 
-As mentioned previously, Firecomm can be broken into serveral core pieces.
+As mentioned previously, Firecomm can be broken into several core pieces.
 
 - `build` - defines the logic for Servers and Stub methods
   - accessible through a top-level constructor function
