@@ -47,7 +47,7 @@ const NavCore = () => {
           <a href="/docs/gettingstarted/intro">Getting Started</a>
         </Link>
         <Link>
-          <a href="docs/apireference/build">API</a>
+          <a href="/docs/apireference/buildfunction">API</a>
         </Link>
         {/* <Link href="/guides">
           <a href="/guides">Guides</a>
