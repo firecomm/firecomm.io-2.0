@@ -1,4 +1,37 @@
 # Stub Duplex
+
+```javascript
+// /clients/someClient.js
+const { Stub } = require( 'firecomm' );
+const package = require( '../package.js' )
+const stub = new Stub( 
+  package.SomeService, 
+  'localhost: 3000',
+);
+
+const duplex = stub.someDuplex({thisIsMetadata: 'example'})
+  .send({infinite: 'requests'})
+  .on( 'metadata', (metadata) => {
+    console.log(metadata.getMap())
+  })
+  .on( 'error', (err) => console.error(err))
+  .on( 'data', (data) => {
+    duplex.send(
+      {
+        infinite: data
+      }
+    )
+  })
+  
+  setInterval(() => {
+    duplex.send(
+      {
+        infinite: 'requests'
+      }
+    )
+  }, 100);
+```
+
 Object for sending **any number** of RPC Method **requests** and listening for **any number** of RPC Method **responses**.
 
 | Returned from          | Type   | Peer         | Description                                                                |
@@ -6,6 +39,22 @@ Object for sending **any number** of RPC Method **requests** and listening for *
 | `Stub.<RPCmethodName>()` | Object | Server Duplex | `<RPCmethodName>` defined with `stream` on both request and response in `proto`. Peer is defined by methodName at Server | 
 
 ## Methods
+
+### `.on(event, callback)`
+Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
+
+parameters:
+
+| Name     | Type/Options | Description                                                            |
+| ---------- | -------------- | ------------------------------------------------------------------------ |
+| event    | String       | Event to listen for from peer.                                         |
+|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
+|          | 'error'      | Listens for peer thrown error. Callback gets passed `Error`.            |
+|          | 'metadata'   | Listens for Metadata object from peer. Callback gets passed `Metadata`. |
+|          | 'status'     | Listens for change in connection status. Callback gets passed `Status`. |
+| callback | Function     | Is passed `Message`, `Error`, `Metadata`, `Status` based on event.     |
+returns `Stub Duplex` to chain Methods
+
 ### `.send(message, flags, flushCallback)`
 
 Emits a `'data'` event and sends `message` to peer.
@@ -33,21 +82,6 @@ parameters:
 | Name     | Type     | Parameter | Description                                   |
 | ---------- | ---------- | ----------- | ----------------------------------------------- |
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
-returns `Stub Duplex` to chain Methods
-
-### `.on(event, callback)`
-Listener for `'data'`, `error`, `'metadata'`, or `'status'` event from peer.
-
-parameters:
-
-| Name     | Type/Options | Description                                                            |
-| ---------- | -------------- | ------------------------------------------------------------------------ |
-| event    | String       | Event to listen for from peer.                                         |
-|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
-|          | 'error'      | Listens for peer thrown error. Callback gets passed `Error`.            |
-|          | 'metadata'   | Listens for Metadata object from peer. Callback gets passed `Metadata`. |
-|          | 'status'     | Listens for change in connection status. Callback gets passed `Status`. |
-| callback | Function     | Is passed `Message`, `Error`, `Metadata`, `Status` based on event.     |
 returns `Stub Duplex` to chain Methods
 
 ### `.cancel()`

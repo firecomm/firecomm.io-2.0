@@ -163,7 +163,7 @@ const stub = new Stub(
 
 ## 9. Make requests from the `Stub` and see how many requests and responses a duplex can make!
 ```javascript
-// /clients/heavyMath.js
+// /clients/chattyMath.js
 const { Stub } = require( 'firecomm' );
 const package = require( '../package.js' )
 const stub = new Stub( 
