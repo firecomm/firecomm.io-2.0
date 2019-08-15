@@ -28,12 +28,12 @@ class DocsLayout extends React.Component {
       },
       {
         title: "Core",
-        collapsed: false,
+        collapsed: true,
         subsections: ["Build", "Server", "Server Calls", "Stub", "Stub Calls"]
       },
       {
         title: "Extensions",
-        collapsed: false,
+        collapsed: true,
         subsections: ["Middleware", "Metadata", "Interceptors"]
       },
       // {
@@ -43,7 +43,7 @@ class DocsLayout extends React.Component {
       // },
       {
         title: "API Reference",
-        collapsed: false,
+        collapsed: true,
         subsections: [
           "Build",
           "Package",
