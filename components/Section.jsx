@@ -50,8 +50,8 @@ const Section = ({
   activeSection
 }) => {
   const subsectionsToRender = subsections.map(subtitle => {
-    const section = title.toLowerCase().replace(" ", "");
-    const subsection = subtitle.toLowerCase().replace(" ", "");
+    const section = title.toLowerCase().replace(/[ ]/g, "");
+    const subsection = subtitle.toLowerCase().replace(/[ ]/g, "");
     return (
       <a href={`/docs/${section}/${subsection}`}>
         <SubsectionStyled
