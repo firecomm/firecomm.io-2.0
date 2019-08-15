@@ -25,6 +25,20 @@ Object for sending **one** stream-ending RPC Method **response** and listening f
 Metadata `Object` received from stub.
 
 ## Methods
+### `.on(event, callback)`
+Listener for `'data'`, `'metadata'`, `'error'` event from peer.
+
+parameters:
+
+| Name     | Type/Options | Description                                                            |
+| ---------- | -------------- | ------------------------------------------------------------------------ |
+| event    | String       | Event to listen for from peer.                                         |
+|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
+|          | 'metadata'   | Listens for peer metadata. Callback gets passed `Metadata`.              |
+|          | 'error'      | Listens for peer error. Callback gets passed `Error`.              |
+| callback | Function     | Is passed `Message` based on event.     |
+returns `Server Client-Stream Response`
+
 ### `.set(metadata)`
 
 Emits a `'data'` event and sends `message` to peer.
@@ -57,19 +71,8 @@ parameters:
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
 returns `Server Client-Stream Response`
 
-### `.on(event, callback)`
-Listener for `'data'` event from peer.
 
-parameters:
-
-| Name     | Type/Options | Description                                                            |
-|----------|--------------|------------------------------------------------------------------------|
-| event    | String       | Event to listen for from peer.                                         |
-|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
-| callback | Function     | Is passed `Message` based on event.     |
-returns `Server Client-Stream Response`
-
-### `.throw()`
+### `.throw(error, trailers)`
 Non-chainable method that cancels ongoing connection. Results in the call ending with a CANCELLED status, unless it has already ended with some other status.
 
 parameters:

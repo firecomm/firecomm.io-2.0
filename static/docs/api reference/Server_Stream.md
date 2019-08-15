@@ -1,4 +1,17 @@
 # Server Stream
+
+```javascript
+// /server/handlers.js
+function someServerStreamHandler(response) {
+  response
+    .on('data', (data) => {
+      setInterval(() => response.send({some: data, more: [data * 2, data / 2]}), 1000)
+    }))
+    .on('metadata', (metadata) => metadata.getMap())
+    .on('error', (err) => console.error(err))
+}
+```
+
 Object for sending **any number** of RPC Method **responses** and listening for **one** RPC Method **request**.
 
 | Passed into as `call`      | Type   | Peer        | Description                                                                                                                            |
@@ -10,6 +23,20 @@ Object for sending **any number** of RPC Method **responses** and listening for 
 Metadata `Object` received from stub.
 
 ## Methods
+### `.on(event, callback)`
+Listener for `'data'`, `'metadata'`, `'error'` event from peer.
+
+parameters:
+
+| Name     | Type/Options | Description                                                            |
+| ---------- | -------------- | ------------------------------------------------------------------------ |
+| event    | String       | Event to listen for from peer.                                         |
+|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
+|          | 'metadata'   | Listens for peer metadata. Callback gets passed `Metadata`.              |
+|          | 'error'      | Listens for peer error. Callback gets passed `Error`.              |
+| callback | Function     | Is passed `Message` based on event.     |
+returns `Server Stream`
+
 ### `.set(metadata)`
 
 Emits a `'data'` event and sends `message` to peer.
@@ -28,7 +55,7 @@ Emits a `'data'` event and sends `message` to peer.
 parameters:
 
 | Name          | Type     | Description                                                                                     |
-| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+|---------------|----------|-------------------------------------------------------------------------------------------------|
 | message       | Object   | Properties should match the request `message` defined in the `proto`                            |
 returns `Server Stream`
 
@@ -38,29 +65,18 @@ Listener for `'error'` event from peer.
 parameters:
 
 | Name     | Type     | Parameter | Description                                   |
-| ---------- | ---------- | ----------- | ----------------------------------------------- |
+|----------|----------|-----------|-----------------------------------------------|
 | callback(error) | Function | error     | Peer's thrown `error` is passed into callback |
 returns `Server Stream`
 
-### `.on(event, callback)`
-Listener for `'data'` event from peer.
 
-parameters:
-
-| Name     | Type/Options | Description                                                            |
-| ---------- | -------------- | ------------------------------------------------------------------------ |
-| event    | String       | Event to listen for from peer.                                         |
-|          | 'data'       | Listens for peer response. Callback gets passed `Message`.              |
-| callback | Function     | Is passed `Message` based on event.     |
-returns `Server Stream`
-
-### `.throw()`
+### `.throw(error, trailers)`
 Non-chainable method that cancels ongoing connection. Results in the call ending with a CANCELLED status, unless it has already ended with some other status.
 
 parameters:
 
 | Name          | Type     | Description                                                                                     |
-| --------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+|---------------|----------|-------------------------------------------------------------------------------------------------|
 | error       | Error   | Error to be sent to Peer                            |
 | trailers       | Object   | Metadata to be sent to peer with error                            |
 
