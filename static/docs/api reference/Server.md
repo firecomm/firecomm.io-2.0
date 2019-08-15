@@ -1,7 +1,22 @@
 # firecomm.Server
 
 ```javascript
+// /server/server.js
+const { Server } = require( 'firecomm' );
+const package = require( '../package.js' );
+const { someHandler, anotherHandler } = require ( './handlers.js' );
 
+new Server()
+  .addService( 
+    package.Service,   
+    { BidiMath: someHandler }
+  )
+  .addService( 
+    package.AnotherService,   
+    { BidiMath: anotherHandler }
+  )
+  .bind(['0.0.0.0: 3000', '0.0.0.0: 8888'])
+  .start();
 ```
 
 ## Constructor

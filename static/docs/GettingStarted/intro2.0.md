@@ -104,7 +104,7 @@ const package = require( '../package.js' );
 const { BidiMathHandler } = require ( './chattyMathHandlers.js );
 
 new Server()
-  .addService( package.ChattyMath,   {
+  .addService( package.ChattyMath, {
   BidiMath: BidiMathHandler,
 })
 ```
