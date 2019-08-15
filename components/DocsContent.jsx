@@ -11,6 +11,7 @@ const MarkdownStyles = styled.div`
 
   @media only screen and (min-width: ${mobileBreakpoint}px) {
     width: 65%;
+    padding-left: 5%;
   }
 `;
 
