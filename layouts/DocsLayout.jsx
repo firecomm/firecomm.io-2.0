@@ -17,16 +17,6 @@ const PageContainer = styled.section`
   width: ${props => (props.big ? "100%" : "75%")};
 `;
 
-const MarkdownStyles = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 75%;
-
-  @media only screen and (min-width: ${mobileBreakpoint}px) {
-    width: 60%;
-  }
-`;
-
 class DocsLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -38,12 +28,12 @@ class DocsLayout extends React.Component {
       },
       {
         title: "Core",
-        collapsed: false,
+        collapsed: true,
         subsections: ["Build", "Server", "Server Calls", "Stub", "Stub Calls"]
       },
       {
         title: "Extensions",
-        collapsed: false,
+        collapsed: true,
         subsections: ["Middleware", "Metadata", "Interceptors"]
       },
       // {
@@ -53,7 +43,7 @@ class DocsLayout extends React.Component {
       // },
       {
         title: "API Reference",
-        collapsed: false,
+        collapsed: true,
         subsections: [
           "Build",
           "Package",
@@ -81,6 +71,8 @@ class DocsLayout extends React.Component {
       // }
     ];
     const linksArray = [];
+    const sectionIndeces = {};
+    let trueIndex = 0;
     for (let i = 0; i < sections.length; i++) {
       for (let j = 0; j < sections[i].subsections.length; j++) {
         const linkObject = {
@@ -92,14 +84,19 @@ class DocsLayout extends React.Component {
             sections[i].subsections[j].toLowerCase().replace(" ", "")
         };
         linksArray.push(linkObject);
+        sectionIndeces[linkObject.title] = trueIndex;
+        trueIndex++;
       }
     }
+    // console.log(linksArray);
+    // console.log(sectionIndeces);
     this.state = {
       sidebarActive: false,
       windowWidth: mobileBreakpoint,
       activeSection: "Getting Started",
       sections,
-      linksArray
+      linksArray,
+      sectionIndeces
     };
   }
 
@@ -111,7 +108,7 @@ class DocsLayout extends React.Component {
   }
 
   changeActiveSection(section) {
-    console.log(section);
+    // console.log(section);
     this.setState(state => {
       return { activeSection: section };
     });
@@ -121,6 +118,18 @@ class DocsLayout extends React.Component {
     window.addEventListener("resize", this.handleResize.bind(this));
     this.setState(state => {
       return { windowWidth: window.innerWidth };
+    });
+  }
+
+  toggleSection(section) {
+    this.setState(state => {
+      let sections = Object.assign(state.sections);
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].title === section) {
+          sections[i].collapsed = !state.sections[i].collapsed;
+          return { sections };
+        }
+      }
     });
   }
 
@@ -147,6 +156,7 @@ class DocsLayout extends React.Component {
         />
         <FlexRow>
           <Sidebar
+            toggleSection={section => this.toggleSection(section)}
             windowWidth={this.state.windowWidth}
             activeSection={this.props.subsection}
             sections={this.state.sections}
@@ -155,9 +165,12 @@ class DocsLayout extends React.Component {
           />
           {this.state.sidebarActive &&
           this.state.windowWidth <= mobileBreakpoint ? null : (
-            <MarkdownStyles>
-              <div class="page-body">{this.props.children}</div>
-            </MarkdownStyles>
+            <>
+              {this.props.renderProps({
+                linksArray: this.state.linksArray,
+                sectionIndeces: this.state.sectionIndeces
+              })}
+            </>
           )}
         </FlexRow>
         <Footer />
