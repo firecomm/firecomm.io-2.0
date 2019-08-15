@@ -36,9 +36,3 @@ const stub = new Stub(
   { certificate: sslCertificate }
 );
 ```
-
-# Methods
-
-```javascript
-
-```
