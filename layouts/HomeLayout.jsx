@@ -26,6 +26,9 @@ class HomeLayout extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize.bind(this));
+    this.setState(state => {
+      return { windowWidth: window.innerWidth };
+    });
   }
 
   toggleSidebar() {
