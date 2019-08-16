@@ -59,7 +59,7 @@ const Nav = props => {
   React.useEffect(() => {
     console.log("windowwidth", props.windowWidth);
   });
-  if (props.windowWidth >= mobileBreakpoint) {
+  if (props.windowWidth > mobileBreakpoint) {
     return (
       <NavStyle main>
         <div className="logo">
