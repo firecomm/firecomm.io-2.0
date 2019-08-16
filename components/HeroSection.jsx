@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { HorizontalCenter, VerticalCenter } from "../styles/styles";
 
+import { mobileBreakpoint } from "../constants";
+
 const LogoFlex = styled.div`
   display: flex;
   margin-bottom: 20px;
@@ -15,10 +17,15 @@ const HeroFlex = styled.div`
 
 const HeroTitle = styled.h3`
   text-align: center;
-  font-size: 65px;
   margin: 0 0 0 15px;
-  padding-top: 10px;
   color: ${props => props.theme.mainColor};
+  padding-top: 10px;
+  font-size: 50px;
+
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
+    padding-top: 10px;
+    font-size: 65px;
+  }
 `;
 
 const HeroColumn = styled.div`
@@ -38,7 +45,8 @@ const HeroSubtitle = styled.h3`
 
 const GetStartedButton = styled.button`
   width: 270px;
-  height: 70px;
+  height: 80px;
+  padding: 20px;
   font-size: 30px;
   font-weight: 700;
   color: ${props => props.theme.white};
@@ -51,6 +59,12 @@ const GetStartedButton = styled.button`
     cursor: pointer;
     background-color: ${props => props.theme.white};
     border: 2px solid ${props => props.theme.mainColor};
+  }
+
+  @media only screen and (min-width: ${mobileBreakpoint}px) {
+    width: 270px;
+    height: 70px;
+    font-size: 30px;
   }
 `;
 
